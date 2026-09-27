@@ -1,0 +1,3761 @@
+﻿{
+  "meta": {
+    "count": 102,
+    "db_response_time_ms": 60,
+    "page": 1,
+    "per_page": 3,
+    "groups_count": null,
+    "x_query": {
+      "oql": "works where full text has (PulseDB blood pressure)",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "PulseDB blood pressure",
+            "operator": "has"
+          }
+        ]
+      },
+      "url": "/works?filter=fulltext.search:PulseDB blood pressure&per_page=3&page=1"
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W4319602646",
+      "doi": "https://doi.org/10.3389/fdgth.2022.1090854",
+      "title": "PulseDB: A large, cleaned dataset based on MIMIC-III and VitalDB for benchmarking cuff-less blood pressure estimation methods",
+      "display_name": "PulseDB: A large, cleaned dataset based on MIMIC-III and VitalDB for benchmarking cuff-less blood pressure estimation methods",
+      "relevance_score": 777.013,
+      "publication_year": 2023,
+      "publication_date": "2023-02-08",
+      "ids": {
+        "openalex": "https://openalex.org/W4319602646",
+        "doi": "https://doi.org/10.3389/fdgth.2022.1090854",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/36844249"
+      },
+      "language": "en",
+      "primary_location": {
+        "id": "doi:10.3389/fdgth.2022.1090854",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fdgth.2022.1090854",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/fdgth.2022.1090854/pdf",
+        "source": {
+          "id": "https://openalex.org/S4210170686",
+          "display_name": "Frontiers in Digital Health",
+          "issn_l": "2673-253X",
+          "issn": [
+            "2673-253X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Digital Health",
+        "raw_type": "journal-article"
+      },
+      "type": "article",
+      "indexed_in": [
+        "crossref",
+        "doaj",
+        "pubmed"
+      ],
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fdgth.2022.1090854/pdf",
+        "any_repository_has_fulltext": true
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5100650913",
+            "display_name": "Weinan Wang",
+            "orcid": "https://orcid.org/0000-0002-2412-4978",
+            "observed_orcids": [
+              "https://orcid.org/0000-0002-2412-4978"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I102322142",
+              "display_name": "Rutgers, The State University of New Jersey",
+              "ror": "https://ror.org/05vt9qd57",
+              "country_code": "US",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I102322142"
+              ]
+            }
+          ],
+          "countries": [
+            "US"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Weinan Wang",
+          "raw_affiliation_strings": [
+            "Integrated Systems and NeuroImaging Laboratory, Department of Electrical and Computer Engineering, Rutgers University, Piscataway, NJ, United States"
+          ],
+          "raw_orcid": null,
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Integrated Systems and NeuroImaging Laboratory, Department of Electrical and Computer Engineering, Rutgers University, Piscataway, NJ, United States",
+              "institution_ids": [
+                "https://openalex.org/I102322142"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "middle",
+          "author": {
+            "id": "https://openalex.org/A5024009232",
+            "display_name": "Pedram Mohseni",
+            "orcid": "https://orcid.org/0000-0002-2849-4677",
+            "observed_orcids": [
+              "https://orcid.org/0000-0002-2849-4677"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I58956616",
+              "display_name": "Case Western Reserve University",
+              "ror": "https://ror.org/051fd9666",
+              "country_code": "US",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I58956616"
+              ]
+            }
+          ],
+          "countries": [
+            "US"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Pedram Mohseni",
+          "raw_affiliation_strings": [
+            "Department of Electrical, Computer, and Systems Engineering, Case Western Reserve University, Cleveland, OH, United States"
+          ],
+          "raw_orcid": null,
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Electrical, Computer, and Systems Engineering, Case Western Reserve University, Cleveland, OH, United States",
+              "institution_ids": [
+                "https://openalex.org/I58956616"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "middle",
+          "author": {
+            "id": "https://openalex.org/A5013873685",
+            "display_name": "Kevin L. Kilgore",
+            "orcid": "https://orcid.org/0000-0002-2642-9855",
+            "observed_orcids": [
+              "https://orcid.org/0000-0002-2642-9855"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I4210157264",
+              "display_name": "MetroHealth Medical Center",
+              "ror": "https://ror.org/05j4p5w63",
+              "country_code": "US",
+              "type": "healthcare",
+              "lineage": [
+                "https://openalex.org/I1299218025",
+                "https://openalex.org/I4210157264"
+              ]
+            },
+            {
+              "id": "https://openalex.org/I58956616",
+              "display_name": "Case Western Reserve University",
+              "ror": "https://ror.org/051fd9666",
+              "country_code": "US",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I58956616"
+              ]
+            }
+          ],
+          "countries": [
+            "US"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Kevin L. Kilgore",
+          "raw_affiliation_strings": [
+            "Department of Physical Medicine & Rehabilitation, Case Western Reserve University and The MetroHealth System, Cleveland, OH, United States"
+          ],
+          "raw_orcid": null,
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Physical Medicine & Rehabilitation, Case Western Reserve University and The MetroHealth System, Cleveland, OH, United States",
+              "institution_ids": [
+                "https://openalex.org/I4210157264",
+                "https://openalex.org/I58956616"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "last",
+          "author": {
+            "id": "https://openalex.org/A5029389730",
+            "display_name": "Laleh Najafizadeh",
+            "orcid": "https://orcid.org/0000-0002-6658-4112",
+            "observed_orcids": [
+              "https://orcid.org/0000-0002-6658-4112"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I102322142",
+              "display_name": "Rutgers, The State University of New Jersey",
+              "ror": "https://ror.org/05vt9qd57",
+              "country_code": "US",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I102322142"
+              ]
+            }
+          ],
+          "countries": [
+            "US"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Laleh Najafizadeh",
+          "raw_affiliation_strings": [
+            "Integrated Systems and NeuroImaging Laboratory, Department of Electrical and Computer Engineering, Rutgers University, Piscataway, NJ, United States"
+          ],
+          "raw_orcid": null,
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Integrated Systems and NeuroImaging Laboratory, Department of Electrical and Computer Engineering, Rutgers University, Piscataway, NJ, United States",
+              "institution_ids": [
+                "https://openalex.org/I102322142"
+              ]
+            }
+          ]
+        }
+      ],
+      "institutions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 3,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5029389730",
+        "https://openalex.org/A5100650913"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I102322142"
+      ],
+      "apc_list": {
+        "value": 2125,
+        "currency": "USD",
+        "value_usd": 2125
+      },
+      "apc_paid": {
+        "value": 2125,
+        "currency": "USD",
+        "value_usd": 2125
+      },
+      "fwci": 7.9183,
+      "has_fulltext": true,
+      "cited_by_count": 102,
+      "citation_normalized_percentile": {
+        "value": 0.98798541,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": true
+      },
+      "cited_by_percentile_year": {
+        "min": 98,
+        "max": 100
+      },
+      "biblio": {
+        "volume": "4",
+        "issue": null,
+        "first_page": "1090854",
+        "last_page": "1090854"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "is_xpac": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T11196",
+        "display_name": "Non-Invasive Vital Sign Monitoring",
+        "score": 1.0,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2204",
+          "display_name": "Biomedical Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T11196",
+          "display_name": "Non-Invasive Vital Sign Monitoring",
+          "score": 1.0,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10745",
+          "display_name": "Heart Rate Variability and Autonomic Control",
+          "score": 0.9995999932289124,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2705",
+            "display_name": "Cardiology and Cardiovascular Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11021",
+          "display_name": "ECG Monitoring and Analysis",
+          "score": 0.9991999864578247,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2705",
+            "display_name": "Cardiology and Cardiovascular Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/generalizability-theory",
+          "display_name": "Generalizability theory",
+          "score": 0.9062931537628174
+        },
+        {
+          "id": "https://openalex.org/keywords/benchmarking",
+          "display_name": "Benchmarking",
+          "score": 0.83892822265625
+        },
+        {
+          "id": "https://openalex.org/keywords/computer-science",
+          "display_name": "Computer science",
+          "score": 0.6904153823852539
+        },
+        {
+          "id": "https://openalex.org/keywords/photoplethysmogram",
+          "display_name": "Photoplethysmogram",
+          "score": 0.6238706707954407
+        },
+        {
+          "id": "https://openalex.org/keywords/calibration",
+          "display_name": "Calibration",
+          "score": 0.6184940338134766
+        },
+        {
+          "id": "https://openalex.org/keywords/artificial-intelligence",
+          "display_name": "Artificial intelligence",
+          "score": 0.5261756181716919
+        },
+        {
+          "id": "https://openalex.org/keywords/estimation",
+          "display_name": "Estimation",
+          "score": 0.4399992525577545
+        },
+        {
+          "id": "https://openalex.org/keywords/data-mining",
+          "display_name": "Data mining",
+          "score": 0.431776762008667
+        },
+        {
+          "id": "https://openalex.org/keywords/generalization",
+          "display_name": "Generalization",
+          "score": 0.4181619882583618
+        },
+        {
+          "id": "https://openalex.org/keywords/identification",
+          "display_name": "Identification (biology)",
+          "score": 0.41733014583587646
+        },
+        {
+          "id": "https://openalex.org/keywords/pattern-recognition",
+          "display_name": "Pattern recognition (psychology)",
+          "score": 0.3828291594982147
+        },
+        {
+          "id": "https://openalex.org/keywords/machine-learning",
+          "display_name": "Machine learning",
+          "score": 0.33867624402046204
+        },
+        {
+          "id": "https://openalex.org/keywords/statistics",
+          "display_name": "Statistics",
+          "score": 0.19029176235198975
+        },
+        {
+          "id": "https://openalex.org/keywords/mathematics",
+          "display_name": "Mathematics",
+          "score": 0.13280296325683594
+        },
+        {
+          "id": "https://openalex.org/keywords/engineering",
+          "display_name": "Engineering",
+          "score": 0.08854115009307861
+        },
+        {
+          "id": "https://openalex.org/keywords/computer-vision",
+          "display_name": "Computer vision",
+          "score": 0.07234466075897217
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C27158222",
+          "wikidata": "https://www.wikidata.org/wiki/Q5532422",
+          "display_name": "Generalizability theory",
+          "level": 2,
+          "score": 0.9062931537628174
+        },
+        {
+          "id": "https://openalex.org/C86251818",
+          "wikidata": "https://www.wikidata.org/wiki/Q816754",
+          "display_name": "Benchmarking",
+          "level": 2,
+          "score": 0.83892822265625
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.6904153823852539
+        },
+        {
+          "id": "https://openalex.org/C116390426",
+          "wikidata": "https://www.wikidata.org/wiki/Q7187885",
+          "display_name": "Photoplethysmogram",
+          "level": 3,
+          "score": 0.6238706707954407
+        },
+        {
+          "id": "https://openalex.org/C165838908",
+          "wikidata": "https://www.wikidata.org/wiki/Q736777",
+          "display_name": "Calibration",
+          "level": 2,
+          "score": 0.6184940338134766
+        },
+        {
+          "id": "https://openalex.org/C154945302",
+          "wikidata": "https://www.wikidata.org/wiki/Q11660",
+          "display_name": "Artificial intelligence",
+          "level": 1,
+          "score": 0.5261756181716919
+        },
+        {
+          "id": "https://openalex.org/C96250715",
+          "wikidata": "https://www.wikidata.org/wiki/Q965330",
+          "display_name": "Estimation",
+          "level": 2,
+          "score": 0.4399992525577545
+        },
+        {
+          "id": "https://openalex.org/C124101348",
+          "wikidata": "https://www.wikidata.org/wiki/Q172491",
+          "display_name": "Data mining",
+          "level": 1,
+          "score": 0.431776762008667
+        },
+        {
+          "id": "https://openalex.org/C177148314",
+          "wikidata": "https://www.wikidata.org/wiki/Q170084",
+          "display_name": "Generalization",
+          "level": 2,
+          "score": 0.4181619882583618
+        },
+        {
+          "id": "https://openalex.org/C116834253",
+          "wikidata": "https://www.wikidata.org/wiki/Q2039217",
+          "display_name": "Identification (biology)",
+          "level": 2,
+          "score": 0.41733014583587646
+        },
+        {
+          "id": "https://openalex.org/C153180895",
+          "wikidata": "https://www.wikidata.org/wiki/Q7148389",
+          "display_name": "Pattern recognition (psychology)",
+          "level": 2,
+          "score": 0.3828291594982147
+        },
+        {
+          "id": "https://openalex.org/C119857082",
+          "wikidata": "https://www.wikidata.org/wiki/Q2539",
+          "display_name": "Machine learning",
+          "level": 1,
+          "score": 0.33867624402046204
+        },
+        {
+          "id": "https://openalex.org/C105795698",
+          "wikidata": "https://www.wikidata.org/wiki/Q12483",
+          "display_name": "Statistics",
+          "level": 1,
+          "score": 0.19029176235198975
+        },
+        {
+          "id": "https://openalex.org/C33923547",
+          "wikidata": "https://www.wikidata.org/wiki/Q395",
+          "display_name": "Mathematics",
+          "level": 0,
+          "score": 0.13280296325683594
+        },
+        {
+          "id": "https://openalex.org/C127413603",
+          "wikidata": "https://www.wikidata.org/wiki/Q11023",
+          "display_name": "Engineering",
+          "level": 0,
+          "score": 0.08854115009307861
+        },
+        {
+          "id": "https://openalex.org/C31972630",
+          "wikidata": "https://www.wikidata.org/wiki/Q844240",
+          "display_name": "Computer vision",
+          "level": 1,
+          "score": 0.07234466075897217
+        },
+        {
+          "id": "https://openalex.org/C106131492",
+          "wikidata": "https://www.wikidata.org/wiki/Q3072260",
+          "display_name": "Filter (signal processing)",
+          "level": 2,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C59822182",
+          "wikidata": "https://www.wikidata.org/wiki/Q441",
+          "display_name": "Botany",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C134306372",
+          "wikidata": "https://www.wikidata.org/wiki/Q7754",
+          "display_name": "Mathematical analysis",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C86803240",
+          "wikidata": "https://www.wikidata.org/wiki/Q420",
+          "display_name": "Biology",
+          "level": 0,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C144133560",
+          "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+          "display_name": "Business",
+          "level": 0,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C162853370",
+          "wikidata": "https://www.wikidata.org/wiki/Q39809",
+          "display_name": "Marketing",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C201995342",
+          "wikidata": "https://www.wikidata.org/wiki/Q682496",
+          "display_name": "Systems engineering",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 4,
+      "locations": [
+        {
+          "id": "doi:10.3389/fdgth.2022.1090854",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3389/fdgth.2022.1090854",
+          "pdf_url": "https://www.frontiersin.org/articles/10.3389/fdgth.2022.1090854/pdf",
+          "source": {
+            "id": "https://openalex.org/S4210170686",
+            "display_name": "Frontiers in Digital Health",
+            "issn_l": "2673-253X",
+            "issn": [
+              "2673-253X"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320527",
+            "host_organization_name": "Frontiers Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320527"
+            ],
+            "host_organization_lineage_names": [
+              "Frontiers Media"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers in Digital Health",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmid:36844249",
+          "is_oa": false,
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/36844249",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306525036",
+            "display_name": "PubMed",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers in digital health",
+          "raw_type": "Journal Article"
+        },
+        {
+          "id": "pmh:oai:pubmedcentral.nih.gov:9944565",
+          "is_oa": true,
+          "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9944565",
+          "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9944565/pdf/fdgth-04-1090854.pdf",
+          "source": {
+            "id": "https://openalex.org/S2764455111",
+            "display_name": "PubMed Central",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-nc-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Front Digit Health",
+          "raw_type": "Text"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:a6f9fc2516794f18b6d40190b1f3361e",
+          "is_oa": true,
+          "landing_page_url": "https://doaj.org/article/a6f9fc2516794f18b6d40190b1f3361e",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Frontiers in Digital Health, Vol 4 (2023)",
+          "raw_type": "article"
+        }
+      ],
+      "best_oa_location": {
+        "id": "doi:10.3389/fdgth.2022.1090854",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fdgth.2022.1090854",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/fdgth.2022.1090854/pdf",
+        "source": {
+          "id": "https://openalex.org/S4210170686",
+          "display_name": "Frontiers in Digital Health",
+          "issn_l": "2673-253X",
+          "issn": [
+            "2673-253X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Digital Health",
+        "raw_type": "journal-article"
+      },
+      "sustainable_development_goals": [
+        {
+          "display_name": "Industry, innovation and infrastructure",
+          "id": "https://metadata.un.org/sdg/9",
+          "score": 0.47999998927116394
+        }
+      ],
+      "x_sdgs": [],
+      "study_designs": [],
+      "awards": [
+        {
+          "id": "https://openalex.org/G7873731716",
+          "display_name": null,
+          "funder_award_id": "R01 EB031911",
+          "funder_id": "https://openalex.org/F4320337363",
+          "funder_display_name": "National Institute of Biomedical Imaging and Bioengineering"
+        },
+        {
+          "id": "https://openalex.org/G7972211995",
+          "display_name": null,
+          "funder_award_id": "598202",
+          "funder_id": "https://openalex.org/F4320308297",
+          "funder_display_name": "Craig H. Neilsen Foundation"
+        },
+        {
+          "id": "https://openalex.org/G9000089775",
+          "display_name": null,
+          "funder_award_id": "5R01EB031911",
+          "funder_id": "https://openalex.org/F4320332161",
+          "funder_display_name": "National Institutes of Health"
+        }
+      ],
+      "funders": [
+        {
+          "id": "https://openalex.org/F4320308297",
+          "display_name": "Craig H. Neilsen Foundation",
+          "ror": "https://ror.org/00k0a6x92"
+        },
+        {
+          "id": "https://openalex.org/F4320332161",
+          "display_name": "National Institutes of Health",
+          "ror": "https://ror.org/01cwqze88"
+        },
+        {
+          "id": "https://openalex.org/F4320337363",
+          "display_name": "National Institute of Biomedical Imaging and Bioengineering",
+          "ror": "https://ror.org/00372qc85"
+        }
+      ],
+      "has_content": {
+        "grobid_xml": true,
+        "pdf": true
+      },
+      "content_urls": {
+        "pdf": "https://content.openalex.org/works/W4319602646.pdf",
+        "grobid_xml": "https://content.openalex.org/works/W4319602646.grobid-xml"
+      },
+      "referenced_works_count": 53,
+      "referenced_works": [
+        "https://openalex.org/W621251951",
+        "https://openalex.org/W1991170684",
+        "https://openalex.org/W2015795623",
+        "https://openalex.org/W2021674224",
+        "https://openalex.org/W2046788142",
+        "https://openalex.org/W2049755262",
+        "https://openalex.org/W2087522345",
+        "https://openalex.org/W2127913883",
+        "https://openalex.org/W2162273778",
+        "https://openalex.org/W2396881363",
+        "https://openalex.org/W2431637923",
+        "https://openalex.org/W2475064587",
+        "https://openalex.org/W2522264526",
+        "https://openalex.org/W2755048715",
+        "https://openalex.org/W2790385199",
+        "https://openalex.org/W2802068140",
+        "https://openalex.org/W2885747298",
+        "https://openalex.org/W2900241252",
+        "https://openalex.org/W2955961229",
+        "https://openalex.org/W2963712527",
+        "https://openalex.org/W2965846681",
+        "https://openalex.org/W2969170900",
+        "https://openalex.org/W2979877842",
+        "https://openalex.org/W2981648641",
+        "https://openalex.org/W2994652673",
+        "https://openalex.org/W3002052414",
+        "https://openalex.org/W3023858750",
+        "https://openalex.org/W3037304592",
+        "https://openalex.org/W3081617066",
+        "https://openalex.org/W3099743694",
+        "https://openalex.org/W3120015513",
+        "https://openalex.org/W3135184486",
+        "https://openalex.org/W3138603577",
+        "https://openalex.org/W3164139332",
+        "https://openalex.org/W3186099984",
+        "https://openalex.org/W3200345925",
+        "https://openalex.org/W3213530928",
+        "https://openalex.org/W3213534619",
+        "https://openalex.org/W4200295897",
+        "https://openalex.org/W4200593288",
+        "https://openalex.org/W4220840763",
+        "https://openalex.org/W4220869671",
+        "https://openalex.org/W4221000109",
+        "https://openalex.org/W4225346207",
+        "https://openalex.org/W4225612652",
+        "https://openalex.org/W4226078356",
+        "https://openalex.org/W4229058141",
+        "https://openalex.org/W4229447256",
+        "https://openalex.org/W4281878921",
+        "https://openalex.org/W4283009719",
+        "https://openalex.org/W4283068819",
+        "https://openalex.org/W4294975206",
+        "https://openalex.org/W6838193104"
+      ],
+      "related_works": [
+        "https://openalex.org/W4238897586",
+        "https://openalex.org/W435179959",
+        "https://openalex.org/W2619091065",
+        "https://openalex.org/W4297152434",
+        "https://openalex.org/W2059640416",
+        "https://openalex.org/W1490753184",
+        "https://openalex.org/W2284465472",
+        "https://openalex.org/W2291782699",
+        "https://openalex.org/W1993948687",
+        "https://openalex.org/W2167883292"
+      ],
+      "abstract_inverted_index": {
+        "There": [
+          0
+        ],
+        "has": [
+          1
+        ],
+        "been": [
+          2,
+          32
+        ],
+        "a": [
+          3,
+          244,
+          255
+        ],
+        "growing": [
+          4
+        ],
+        "interest": [
+          5
+        ],
+        "in": [
+          6
+        ],
+        "developing": [
+          7
+        ],
+        "cuff-less": [
+          8,
+          262
+        ],
+        "blood": [
+          9
+        ],
+        "pressure": [
+          10
+        ],
+        "(BP)": [
+          11
+        ],
+        "estimation": [
+          12,
+          89,
+          109,
+          171,
+          238,
+          264
+        ],
+        "methods": [
+          13,
+          30
+        ],
+        "to": [
+          14,
+          46,
+          104,
+          165,
+          174,
+          181,
+          219,
+          251
+        ],
+        "enable": [
+          15
+        ],
+        "continuous": [
+          16
+        ],
+        "BP": [
+          17,
+          88,
+          108,
+          133,
+          170,
+          237,
+          263
+        ],
+        "monitoring": [
+          18
+        ],
+        "from": [
+          19,
+          136,
+          140,
+          183
+        ],
+        "electrocardiogram": [
+          20
+        ],
+        "(ECG)": [
+          21
+        ],
+        "and/or": [
+          22
+        ],
+        "photoplethysmogram": [
+          23
+        ],
+        "(PPG)": [
+          24
+        ],
+        "signals.": [
+          25
+        ],
+        "The": [
+          26
+        ],
+        "majority": [
+          27
+        ],
+        "of": [
+          28,
+          51,
+          86,
+          116,
+          128,
+          169,
+          178,
+          189,
+          193,
+          235,
+          261
+        ],
+        "these": [
+          29
+        ],
+        "have": [
+          31
+        ],
+        "evaluated": [
+          33
+        ],
+        "using": [
+          34,
+          211
+        ],
+        "publicly-available": [
+          35
+        ],
+        "datasets,": [
+          36
+        ],
+        "however,": [
+          37
+        ],
+        "there": [
+          38
+        ],
+        "exist": [
+          39
+        ],
+        "significant": [
+          40
+        ],
+        "discrepancies": [
+          41
+        ],
+        "across": [
+          42,
+          77
+        ],
+        "studies": [
+          43
+        ],
+        "with": [
+          44,
+          206
+        ],
+        "respect": [
+          45
+        ],
+        "the": [
+          47,
+          49,
+          54,
+          59,
+          69,
+          83,
+          100,
+          114,
+          141,
+          148,
+          167,
+          176,
+          179,
+          190,
+          194,
+          216,
+          223,
+          236,
+          259
+        ],
+        "size,": [
+          48
+        ],
+        "number": [
+          50
+        ],
+        "subjects,": [
+          52
+        ],
+        "and": [
+          53,
+          67,
+          81,
+          131,
+          147,
+          154,
+          186,
+          228,
+          248
+        ],
+        "applied": [
+          55
+        ],
+        "pre-processing": [
+          56
+        ],
+        "steps": [
+          57
+        ],
+        "for": [
+          58,
+          65,
+          106,
+          201,
+          232,
+          258
+        ],
+        "data": [
+          60,
+          182,
+          208
+        ],
+        "that": [
+          61,
+          111,
+          157
+        ],
+        "is": [
+          62
+        ],
+        "eventually": [
+          63
+        ],
+        "used": [
+          64,
+          253
+        ],
+        "training": [
+          66,
+          202
+        ],
+        "testing": [
+          68,
+          118,
+          230
+        ],
+        "models.": [
+          70,
+          239
+        ],
+        "Such": [
+          71
+        ],
+        "differences": [
+          72
+        ],
+        "make": [
+          73
+        ],
+        "conducting": [
+          74
+        ],
+        "performance": [
+          75,
+          168,
+          224
+        ],
+        "comparison": [
+          76
+        ],
+        "models": [
+          78,
+          110,
+          180,
+          205
+        ],
+        "largely": [
+          79
+        ],
+        "unfair,": [
+          80
+        ],
+        "mask": [
+          82
+        ],
+        "generalization": [
+          84
+        ],
+        "capability": [
+          85
+        ],
+        "various": [
+          87
+        ],
+        "methods.": [
+          90,
+          265
+        ],
+        "To": [
+          91
+        ],
+        "fill": [
+          92
+        ],
+        "this": [
+          93,
+          96,
+          212
+        ],
+        "important": [
+          94
+        ],
+        "gap,": [
+          95
+        ],
+        "paper": [
+          97
+        ],
+        "presents": [
+          98
+        ],
+        "\u201cPulseDB,\u201d": [
+          99
+        ],
+        "largest": [
+          101
+        ],
+        "cleaned": [
+          102
+        ],
+        "dataset": [
+          103
+        ],
+        "date,": [
+          105
+        ],
+        "benchmarking": [
+          107
+        ],
+        "also": [
+          112
+        ],
+        "fulfills": [
+          113
+        ],
+        "requirements": [
+          115
+        ],
+        "standardized": [
+          117
+        ],
+        "protocols.": [
+          119
+        ],
+        "PulseDB": [
+          120,
+          198
+        ],
+        "contains": [
+          121
+        ],
+        "1)": [
+          122
+        ],
+        "5,245,454": [
+          123
+        ],
+        "high-quality": [
+          124
+        ],
+        "10": [
+          125
+        ],
+        "-s": [
+          126
+        ],
+        "segments": [
+          127
+        ],
+        "ECG,": [
+          129
+        ],
+        "PPG,": [
+          130
+        ],
+        "arterial": [
+          132
+        ],
+        "(ABP)": [
+          134
+        ],
+        "waveforms": [
+          135
+        ],
+        "5,361": [
+          137
+        ],
+        "subjects": [
+          138
+        ],
+        "retrieved": [
+          139
+        ],
+        "MIMIC-III": [
+          142
+        ],
+        "waveform": [
+          143
+        ],
+        "database": [
+          144
+        ],
+        "matched": [
+          145
+        ],
+        "subset": [
+          146
+        ],
+        "VitalDB": [
+          149
+        ],
+        "database;": [
+          150
+        ],
+        "2)": [
+          151
+        ],
+        "subjects\u2019": [
+          152
+        ],
+        "identification": [
+          153
+        ],
+        "demographic": [
+          155
+        ],
+        "information,": [
+          156
+        ],
+        "can": [
+          158
+        ],
+        "be": [
+          159,
+          252
+        ],
+        "utilized": [
+          160
+        ],
+        "as": [
+          161,
+          243,
+          254
+        ],
+        "additional": [
+          162
+        ],
+        "input": [
+          163
+        ],
+        "features": [
+          164
+        ],
+        "improve": [
+          166
+        ],
+        "models,": [
+          172
+        ],
+        "or": [
+          173
+        ],
+        "evaluate": [
+          175
+        ],
+        "generalizability": [
+          177,
+          234
+        ],
+        "unseen": [
+          184
+        ],
+        "subjects;": [
+          185
+        ],
+        "3)": [
+          187
+        ],
+        "positions": [
+          188
+        ],
+        "characteristic": [
+          191
+        ],
+        "points": [
+          192
+        ],
+        "ECG/PPG": [
+          195
+        ],
+        "signals,": [
+          196
+        ],
+        "making": [
+          197
+        ],
+        "directly": [
+          199
+        ],
+        "usable": [
+          200
+        ],
+        "deep": [
+          203
+        ],
+        "learning": [
+          204
+        ],
+        "minimal": [
+          207
+        ],
+        "pre-processing.": [
+          209
+        ],
+        "Additionally,": [
+          210
+        ],
+        "dataset,": [
+          213,
+          250
+        ],
+        "we": [
+          214
+        ],
+        "conduct": [
+          215
+        ],
+        "first": [
+          217
+        ],
+        "study": [
+          218
+        ],
+        "provide": [
+          220
+        ],
+        "insights": [
+          221
+        ],
+        "about": [
+          222
+        ],
+        "gap": [
+          225
+        ],
+        "between": [
+          226
+        ],
+        "calibration-based": [
+          227
+        ],
+        "calibration-free": [
+          229
+        ],
+        "approaches": [
+          231
+        ],
+        "evaluating": [
+          233
+        ],
+        "We": [
+          240
+        ],
+        "expect": [
+          241
+        ],
+        "PulseDB,": [
+          242
+        ],
+        "user-friendly,": [
+          245
+        ],
+        "large,": [
+          246
+        ],
+        "comprehensive": [
+          247
+        ],
+        "multi-functional": [
+          249
+        ],
+        "reliable": [
+          256
+        ],
+        "source": [
+          257
+        ],
+        "evaluation": [
+          260
+        ]
+      },
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 36
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 39
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 21
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 6
+        }
+      ],
+      "updated_date": "2026-09-25T08:18:29.962427",
+      "created_date": "2025-10-10T00:00:00"
+    },
+    {
+      "id": "https://openalex.org/W4403420268",
+      "doi": "https://doi.org/10.1109/jsen.2024.3468316",
+      "title": "Blood Pressure Estimation Using Self-Attention Mechanism Built-In ResUNet on PulseDB: Demographic Fairness and Generalization",
+      "display_name": "Blood Pressure Estimation Using Self-Attention Mechanism Built-In ResUNet on PulseDB: Demographic Fairness and Generalization",
+      "relevance_score": 349.1735,
+      "publication_year": 2024,
+      "publication_date": "2024-10-15",
+      "ids": {
+        "openalex": "https://openalex.org/W4403420268",
+        "doi": "https://doi.org/10.1109/jsen.2024.3468316"
+      },
+      "language": "en",
+      "primary_location": {
+        "id": "doi:10.1109/jsen.2024.3468316",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1109/jsen.2024.3468316",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S189694085",
+          "display_name": "IEEE Sensors Journal",
+          "issn_l": "1530-437X",
+          "issn": [
+            "1530-437X",
+            "1558-1748",
+            "2379-9153"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2"
+          ],
+          "host_organization": "https://openalex.org/P4310321027",
+          "host_organization_name": "IEEE Sensors Council",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310321027",
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "IEEE Sensors Council",
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Sensors Journal",
+        "raw_type": "journal-article"
+      },
+      "type": "article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5102779551",
+            "display_name": "Zainab Jamil",
+            "orcid": "https://orcid.org/0009-0006-8240-2768",
+            "observed_orcids": [
+              "https://orcid.org/0009-0006-8240-2768"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I168719708",
+              "display_name": "City University of Hong Kong",
+              "ror": "https://ror.org/03q8dnn23",
+              "country_code": "HK",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I168719708"
+              ]
+            }
+          ],
+          "countries": [
+            "HK"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Zainab Jamil",
+          "raw_affiliation_strings": [
+            "Department of Electrical Engineering, City University of Hong Kong, Hong Kong, China"
+          ],
+          "raw_orcid": "https://orcid.org/0009-0006-8240-2768",
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Electrical Engineering, City University of Hong Kong, Hong Kong, China",
+              "institution_ids": [
+                "https://openalex.org/I168719708"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "middle",
+          "author": {
+            "id": "https://openalex.org/A5087507582",
+            "display_name": "Leong Ting Lui",
+            "orcid": "https://orcid.org/0000-0001-9284-3934",
+            "observed_orcids": [
+              "https://orcid.org/0000-0001-9284-3934"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I168719708",
+              "display_name": "City University of Hong Kong",
+              "ror": "https://ror.org/03q8dnn23",
+              "country_code": "HK",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I168719708"
+              ]
+            }
+          ],
+          "countries": [
+            "HK"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Leong Ting Lui",
+          "raw_affiliation_strings": [
+            "Department of Electrical Engineering, City University of Hong Kong, Hong Kong, China"
+          ],
+          "raw_orcid": "https://orcid.org/0000-0001-9284-3934",
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Electrical Engineering, City University of Hong Kong, Hong Kong, China",
+              "institution_ids": [
+                "https://openalex.org/I168719708"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "last",
+          "author": {
+            "id": "https://openalex.org/A5010836514",
+            "display_name": "Rosa H. M. Chan",
+            "orcid": "https://orcid.org/0000-0003-4808-2490",
+            "observed_orcids": [
+              "https://orcid.org/0000-0003-4808-2490",
+              "https://orcid.org/0000-0001-8064-5674"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I168719708",
+              "display_name": "City University of Hong Kong",
+              "ror": "https://ror.org/03q8dnn23",
+              "country_code": "HK",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I168719708"
+              ]
+            }
+          ],
+          "countries": [
+            "HK"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Rosa H. M. Chan",
+          "raw_affiliation_strings": [
+            "Department of Electrical Engineering, City University of Hong Kong, Hong Kong, China"
+          ],
+          "raw_orcid": "https://orcid.org/0000-0003-4808-2490",
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Electrical Engineering, City University of Hong Kong, Hong Kong, China",
+              "institution_ids": [
+                "https://openalex.org/I168719708"
+              ]
+            }
+          ]
+        }
+      ],
+      "institutions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I168719708"
+      ],
+      "apc_list": {
+        "value": 2495,
+        "currency": "USD",
+        "value_usd": 2495
+      },
+      "apc_paid": null,
+      "fwci": 1.9242,
+      "has_fulltext": false,
+      "cited_by_count": 17,
+      "citation_normalized_percentile": {
+        "value": 0.85609293,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 99,
+        "max": 100
+      },
+      "biblio": {
+        "volume": "25",
+        "issue": "1",
+        "first_page": "1694",
+        "last_page": "1705"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "is_xpac": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T11196",
+        "display_name": "Non-Invasive Vital Sign Monitoring",
+        "score": 0.6301000118255615,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2204",
+          "display_name": "Biomedical Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T11196",
+          "display_name": "Non-Invasive Vital Sign Monitoring",
+          "score": 0.6301000118255615,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/generalization",
+          "display_name": "Generalization",
+          "score": 0.6620792746543884
+        },
+        {
+          "id": "https://openalex.org/keywords/mechanism",
+          "display_name": "Mechanism (biology)",
+          "score": 0.5985509753227234
+        },
+        {
+          "id": "https://openalex.org/keywords/estimation",
+          "display_name": "Estimation",
+          "score": 0.5225685834884644
+        },
+        {
+          "id": "https://openalex.org/keywords/computer-science",
+          "display_name": "Computer science",
+          "score": 0.5221062898635864
+        },
+        {
+          "id": "https://openalex.org/keywords/artificial-intelligence",
+          "display_name": "Artificial intelligence",
+          "score": 0.320483922958374
+        },
+        {
+          "id": "https://openalex.org/keywords/mathematics",
+          "display_name": "Mathematics",
+          "score": 0.21476507186889648
+        },
+        {
+          "id": "https://openalex.org/keywords/engineering",
+          "display_name": "Engineering",
+          "score": 0.17270314693450928
+        },
+        {
+          "id": "https://openalex.org/keywords/physics",
+          "display_name": "Physics",
+          "score": 0.09836390614509583
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C177148314",
+          "wikidata": "https://www.wikidata.org/wiki/Q170084",
+          "display_name": "Generalization",
+          "level": 2,
+          "score": 0.6620792746543884
+        },
+        {
+          "id": "https://openalex.org/C89611455",
+          "wikidata": "https://www.wikidata.org/wiki/Q6804646",
+          "display_name": "Mechanism (biology)",
+          "level": 2,
+          "score": 0.5985509753227234
+        },
+        {
+          "id": "https://openalex.org/C96250715",
+          "wikidata": "https://www.wikidata.org/wiki/Q965330",
+          "display_name": "Estimation",
+          "level": 2,
+          "score": 0.5225685834884644
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.5221062898635864
+        },
+        {
+          "id": "https://openalex.org/C154945302",
+          "wikidata": "https://www.wikidata.org/wiki/Q11660",
+          "display_name": "Artificial intelligence",
+          "level": 1,
+          "score": 0.320483922958374
+        },
+        {
+          "id": "https://openalex.org/C33923547",
+          "wikidata": "https://www.wikidata.org/wiki/Q395",
+          "display_name": "Mathematics",
+          "level": 0,
+          "score": 0.21476507186889648
+        },
+        {
+          "id": "https://openalex.org/C127413603",
+          "wikidata": "https://www.wikidata.org/wiki/Q11023",
+          "display_name": "Engineering",
+          "level": 0,
+          "score": 0.17270314693450928
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.09836390614509583
+        },
+        {
+          "id": "https://openalex.org/C201995342",
+          "wikidata": "https://www.wikidata.org/wiki/Q682496",
+          "display_name": "Systems engineering",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C62520636",
+          "wikidata": "https://www.wikidata.org/wiki/Q944",
+          "display_name": "Quantum mechanics",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C134306372",
+          "wikidata": "https://www.wikidata.org/wiki/Q7754",
+          "display_name": "Mathematical analysis",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "id": "doi:10.1109/jsen.2024.3468316",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1109/jsen.2024.3468316",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S189694085",
+            "display_name": "IEEE Sensors Journal",
+            "issn_l": "1530-437X",
+            "issn": [
+              "1530-437X",
+              "1558-1748",
+              "2379-9153"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-2",
+              "ki-jl-2",
+              "norway-2"
+            ],
+            "host_organization": "https://openalex.org/P4310321027",
+            "host_organization_name": "IEEE Sensors Council",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310321027",
+              "https://openalex.org/P4310319808"
+            ],
+            "host_organization_lineage_names": [
+              "IEEE Sensors Council",
+              "Institute of Electrical and Electronics Engineers"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "IEEE Sensors Journal",
+          "raw_type": "journal-article"
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "x_sdgs": [],
+      "study_designs": [],
+      "awards": [],
+      "funders": [
+        {
+          "id": "https://openalex.org/F4320309893",
+          "display_name": "City University of Hong Kong",
+          "ror": "https://ror.org/03q8dnn23"
+        }
+      ],
+      "has_content": {
+        "grobid_xml": false,
+        "pdf": false
+      },
+      "content_urls": null,
+      "referenced_works_count": 52,
+      "referenced_works": [
+        "https://openalex.org/W1901129140",
+        "https://openalex.org/W1903029394",
+        "https://openalex.org/W2166451543",
+        "https://openalex.org/W2396881363",
+        "https://openalex.org/W2550695174",
+        "https://openalex.org/W2608498389",
+        "https://openalex.org/W2774320778",
+        "https://openalex.org/W2782272478",
+        "https://openalex.org/W2790385199",
+        "https://openalex.org/W2888894984",
+        "https://openalex.org/W2898457169",
+        "https://openalex.org/W2903610377",
+        "https://openalex.org/W2948044158",
+        "https://openalex.org/W2963697299",
+        "https://openalex.org/W2969960368",
+        "https://openalex.org/W2998221251",
+        "https://openalex.org/W2998223455",
+        "https://openalex.org/W3003299879",
+        "https://openalex.org/W3015201783",
+        "https://openalex.org/W3134816422",
+        "https://openalex.org/W3138603577",
+        "https://openalex.org/W3164461680",
+        "https://openalex.org/W3164570271",
+        "https://openalex.org/W3181506921",
+        "https://openalex.org/W4205267412",
+        "https://openalex.org/W4206379192",
+        "https://openalex.org/W4210413548",
+        "https://openalex.org/W4211081528",
+        "https://openalex.org/W4224217554",
+        "https://openalex.org/W4225842641",
+        "https://openalex.org/W4229018581",
+        "https://openalex.org/W4237588818",
+        "https://openalex.org/W4281878921",
+        "https://openalex.org/W4282965153",
+        "https://openalex.org/W4284886205",
+        "https://openalex.org/W4292394411",
+        "https://openalex.org/W4298393621",
+        "https://openalex.org/W4309119158",
+        "https://openalex.org/W4317892938",
+        "https://openalex.org/W4319602646",
+        "https://openalex.org/W4366503996",
+        "https://openalex.org/W4378232534",
+        "https://openalex.org/W4378530790",
+        "https://openalex.org/W4385245566",
+        "https://openalex.org/W4385604071",
+        "https://openalex.org/W4386127773",
+        "https://openalex.org/W4386933385",
+        "https://openalex.org/W4390675681",
+        "https://openalex.org/W4392745490",
+        "https://openalex.org/W4392904732",
+        "https://openalex.org/W4392979617",
+        "https://openalex.org/W4400680432"
+      ],
+      "related_works": [
+        "https://openalex.org/W4391375266",
+        "https://openalex.org/W2748952813",
+        "https://openalex.org/W2390279801",
+        "https://openalex.org/W3162204513",
+        "https://openalex.org/W4391913857",
+        "https://openalex.org/W2358668433",
+        "https://openalex.org/W4396701345",
+        "https://openalex.org/W2376932109",
+        "https://openalex.org/W2001405890",
+        "https://openalex.org/W4396696052"
+      ],
+      "abstract_inverted_index": {
+        "This": [
+          0,
+          75,
+          221
+        ],
+        "study": [
+          1
+        ],
+        "focuses": [
+          2
+        ],
+        "on": [
+          3,
+          60,
+          96,
+          210
+        ],
+        "the": [
+          4,
+          36,
+          40,
+          44,
+          53,
+          90,
+          130,
+          146,
+          149,
+          153,
+          156,
+          163,
+          173,
+          176,
+          182,
+          203,
+          214,
+          224,
+          236
+        ],
+        "estimation": [
+          5,
+          244
+        ],
+        "of": [
+          6,
+          92,
+          110,
+          135,
+          158,
+          178,
+          206
+        ],
+        "systolic": [
+          7
+        ],
+        "and": [
+          8,
+          13,
+          18,
+          62,
+          68,
+          88,
+          94,
+          119,
+          140,
+          162,
+          208,
+          231,
+          241
+        ],
+        "diastolic": [
+          9
+        ],
+        "blood": [
+          10,
+          71
+        ],
+        "pressure": [
+          11,
+          72
+        ],
+        "(SBP": [
+          12
+        ],
+        "DBP)": [
+          14
+        ],
+        "from": [
+          15
+        ],
+        "photoplethysmogram": [
+          16
+        ],
+        "(PPG)": [
+          17
+        ],
+        "electrocardiogram": [
+          19
+        ],
+        "(ECG)": [
+          20
+        ],
+        "signals": [
+          21
+        ],
+        "using": [
+          22,
+          52,
+          84
+        ],
+        "deep": [
+          23
+        ],
+        "neural": [
+          24
+        ],
+        "networks": [
+          25
+        ],
+        "(DNNs).": [
+          26
+        ],
+        "We": [
+          27
+        ],
+        "contributed": [
+          28
+        ],
+        "to": [
+          29,
+          39,
+          47,
+          78,
+          191,
+          196
+        ],
+        "two": [
+          30
+        ],
+        "significant": [
+          31,
+          204
+        ],
+        "areas.": [
+          32
+        ],
+        "First,": [
+          33
+        ],
+        "by": [
+          34,
+          152,
+          226
+        ],
+        "implementing": [
+          35
+        ],
+        "self-attention": [
+          37
+        ],
+        "mechanism": [
+          38
+        ],
+        "ResUNet": [
+          41
+        ],
+        "architecture": [
+          42,
+          230
+        ],
+        "improving": [
+          43
+        ],
+        "model\u2019s": [
+          45,
+          82
+        ],
+        "ability": [
+          46
+        ],
+        "capture": [
+          48
+        ],
+        "contextual": [
+          49
+        ],
+        "dependencies.": [
+          50
+        ],
+        "Second,": [
+          51
+        ],
+        "PulseDB": [
+          54
+        ],
+        "dataset\u2014a": [
+          55
+        ],
+        "large,": [
+          56
+        ],
+        "preprocessed": [
+          57
+        ],
+        "dataset": [
+          58,
+          233
+        ],
+        "based": [
+          59
+        ],
+        "MIMIC-III": [
+          61
+        ],
+        "VitalDB": [
+          63
+        ],
+        "developed": [
+          64
+        ],
+        "specifically": [
+          65
+        ],
+        "for": [
+          66,
+          113,
+          122,
+          138,
+          143,
+          155,
+          172,
+          216,
+          238
+        ],
+        "developing": [
+          67
+        ],
+        "benchmarking": [
+          69
+        ],
+        "cuffless": [
+          70
+        ],
+        "(BP)": [
+          73
+        ],
+        "estimations.": [
+          74
+        ],
+        "enabled": [
+          76
+        ],
+        "us": [
+          77
+        ],
+        "both": [
+          79
+        ],
+        "evaluate": [
+          80
+        ],
+        "our": [
+          81,
+          102,
+          168
+        ],
+        "performance": [
+          83
+        ],
+        "a": [
+          85,
+          105,
+          228
+        ],
+        "calibration-free": [
+          86,
+          128
+        ],
+        "approach": [
+          87
+        ],
+        "investigate": [
+          89
+        ],
+        "impact": [
+          91,
+          205
+        ],
+        "gender": [
+          93,
+          209
+        ],
+        "age": [
+          95,
+          207
+        ],
+        "its": [
+          97
+        ],
+        "accuracy.": [
+          98,
+          126
+        ],
+        "In": [
+          99,
+          127,
+          185
+        ],
+        "calibration-based": [
+          100,
+          183
+        ],
+        "testing,": [
+          101,
+          129
+        ],
+        "model": [
+          103,
+          131
+        ],
+        "achieved": [
+          104
+        ],
+        "mean": [
+          106
+        ],
+        "absolute": [
+          107
+        ],
+        "error": [
+          108
+        ],
+        "(MAE)": [
+          109
+        ],
+        "1.13": [
+          111
+        ],
+        "mmHg": [
+          112,
+          121,
+          137,
+          142
+        ],
+        "DBP,": [
+          114
+        ],
+        "outperforming": [
+          115
+        ],
+        "current": [
+          116
+        ],
+        "state-of-the-art": [
+          117
+        ],
+        "models,": [
+          118
+        ],
+        "4.45": [
+          120
+        ],
+        "SBP,": [
+          123
+        ],
+        "showing": [
+          124
+        ],
+        "comparable": [
+          125
+        ],
+        "recorded": [
+          132
+        ],
+        "an": [
+          133
+        ],
+        "MAE": [
+          134
+        ],
+        "5.12": [
+          136
+        ],
+        "DBP": [
+          139
+        ],
+        "8.11": [
+          141
+        ],
+        "SBP.": [
+          144
+        ],
+        "Both": [
+          145
+        ],
+        "results": [
+          147
+        ],
+        "meet": [
+          148
+        ],
+        "standards": [
+          150
+        ],
+        "set": [
+          151
+        ],
+        "Association": [
+          154
+        ],
+        "Advancement": [
+          157
+        ],
+        "Medical": [
+          159
+        ],
+        "Instrumentation,": [
+          160
+        ],
+        "IEEE-1708,": [
+          161
+        ],
+        "British": [
+          164
+        ],
+        "Hypertension": [
+          165
+        ],
+        "Society.": [
+          166
+        ],
+        "Notably,": [
+          167
+        ],
+        "analysis": [
+          169,
+          201
+        ],
+        "also": [
+          170
+        ],
+        "quantified,": [
+          171
+        ],
+        "first": [
+          174
+        ],
+        "time,": [
+          175
+        ],
+        "extent": [
+          177
+        ],
+        "overestimation": [
+          179
+        ],
+        "associated": [
+          180
+        ],
+        "with": [
+          181
+        ],
+        "approach.": [
+          184
+        ],
+        "addition,": [
+          186
+        ],
+        "we": [
+          187
+        ],
+        "explored": [
+          188
+        ],
+        "cross-dataset": [
+          189
+        ],
+        "evaluation": [
+          190
+        ],
+        "assess": [
+          192
+        ],
+        "generalization,": [
+          193
+        ],
+        "applying": [
+          194
+        ],
+        "fine-tuning": [
+          195
+        ],
+        "enhance": [
+          197
+        ],
+        "performance.": [
+          198
+        ],
+        "Importantly,": [
+          199
+        ],
+        "stratified": [
+          200
+        ],
+        "highlighted": [
+          202
+        ],
+        "BP": [
+          211,
+          243
+        ],
+        "estimation,": [
+          212
+        ],
+        "emphasizing": [
+          213
+        ],
+        "necessity": [
+          215
+        ],
+        "fairness": [
+          217
+        ],
+        "in": [
+          218
+        ],
+        "future": [
+          219
+        ],
+        "models.": [
+          220
+        ],
+        "research": [
+          222
+        ],
+        "advances": [
+          223
+        ],
+        "field": [
+          225
+        ],
+        "introducing": [
+          227
+        ],
+        "robust": [
+          229
+        ],
+        "addressing": [
+          232
+        ],
+        "limitations,": [
+          234
+        ],
+        "paving": [
+          235
+        ],
+        "way": [
+          237
+        ],
+        "more": [
+          239
+        ],
+        "accurate": [
+          240
+        ],
+        "fair": [
+          242
+        ],
+        "methods.": [
+          245
+        ]
+      },
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 8
+        }
+      ],
+      "updated_date": "2026-09-24T07:57:37.273135",
+      "created_date": "2025-10-10T00:00:00"
+    },
+    {
+      "id": "https://openalex.org/W4405270051",
+      "doi": "https://doi.org/10.1109/jsen.2024.3512197",
+      "title": "Dual-Stream CNN-LSTM Architecture for Cuffless Blood Pressure Estimation From PPG and ECG Signals: A PulseDB Study",
+      "display_name": "Dual-Stream CNN-LSTM Architecture for Cuffless Blood Pressure Estimation From PPG and ECG Signals: A PulseDB Study",
+      "relevance_score": 322.80222,
+      "publication_year": 2024,
+      "publication_date": "2024-12-11",
+      "ids": {
+        "openalex": "https://openalex.org/W4405270051",
+        "doi": "https://doi.org/10.1109/jsen.2024.3512197"
+      },
+      "language": "en",
+      "primary_location": {
+        "id": "doi:10.1109/jsen.2024.3512197",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1109/jsen.2024.3512197",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S189694085",
+          "display_name": "IEEE Sensors Journal",
+          "issn_l": "1530-437X",
+          "issn": [
+            "1530-437X",
+            "1558-1748",
+            "2379-9153"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "jufo-2",
+            "norway-2"
+          ],
+          "host_organization": "https://openalex.org/P4310321027",
+          "host_organization_name": "IEEE Sensors Council",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310321027",
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "IEEE Sensors Council",
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Sensors Journal",
+        "raw_type": "journal-article"
+      },
+      "type": "article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": null,
+            "display_name": "Mohd. Rizwan Shaikh",
+            "orcid": "https://orcid.org/0009-0008-9648-8691"
+          },
+          "institutions": [],
+          "countries": [],
+          "is_corresponding": false,
+          "raw_author_name": "Mohd. Rizwan Shaikh",
+          "raw_affiliation_strings": [
+            "&#x00C9;cole de technologie sup&#x00E9;rieure, Universit&#x00E9; du Qu&#x00E9;bec, Montr&#x00E9;al, QC, Canada"
+          ],
+          "raw_orcid": "https://orcid.org/0009-0008-9648-8691",
+          "affiliations": [
+            {
+              "raw_affiliation_string": "&#x00C9;cole de technologie sup&#x00E9;rieure, Universit&#x00E9; du Qu&#x00E9;bec, Montr&#x00E9;al, QC, Canada",
+              "institution_ids": []
+            }
+          ]
+        },
+        {
+          "author_position": "last",
+          "author": {
+            "id": "https://openalex.org/A5069636604",
+            "display_name": "Mohamad Forouzanfar",
+            "orcid": "https://orcid.org/0000-0001-8849-0144"
+          },
+          "institutions": [],
+          "countries": [],
+          "is_corresponding": false,
+          "raw_author_name": "Mohamad Forouzanfar",
+          "raw_affiliation_strings": [
+            "&#x00C9;cole de technologie sup&#x00E9;rieure, Universit&#x00E9; du Qu&#x00E9;bec, Montr&#x00E9;al, QC, Canada"
+          ],
+          "raw_orcid": "https://orcid.org/0000-0001-8849-0144",
+          "affiliations": [
+            {
+              "raw_affiliation_string": "&#x00C9;cole de technologie sup&#x00E9;rieure, Universit&#x00E9; du Qu&#x00E9;bec, Montr&#x00E9;al, QC, Canada",
+              "institution_ids": []
+            }
+          ]
+        }
+      ],
+      "institutions": [],
+      "countries_distinct_count": 0,
+      "institutions_distinct_count": 0,
+      "corresponding_author_ids": [],
+      "corresponding_institution_ids": [],
+      "apc_list": {
+        "value": 2495,
+        "currency": "USD",
+        "value_usd": 2495
+      },
+      "apc_paid": null,
+      "fwci": 1.9416,
+      "has_fulltext": false,
+      "cited_by_count": 17,
+      "citation_normalized_percentile": {
+        "value": 0.85933789,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 98,
+        "max": 100
+      },
+      "biblio": {
+        "volume": "25",
+        "issue": "2",
+        "first_page": "4006",
+        "last_page": "4014"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "is_xpac": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T11196",
+        "display_name": "Non-Invasive Vital Sign Monitoring",
+        "score": 0.9876999855041504,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2204",
+          "display_name": "Biomedical Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T11196",
+          "display_name": "Non-Invasive Vital Sign Monitoring",
+          "score": 0.9876999855041504,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11021",
+          "display_name": "ECG Monitoring and Analysis",
+          "score": 0.9528999924659729,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2705",
+            "display_name": "Cardiology and Cardiovascular Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/photoplethysmogram",
+          "display_name": "Photoplethysmogram",
+          "score": 0.5374006032943726
+        },
+        {
+          "id": "https://openalex.org/keywords/computer-science",
+          "display_name": "Computer science",
+          "score": 0.5273730754852295
+        },
+        {
+          "id": "https://openalex.org/keywords/blood-stream",
+          "display_name": "Blood stream",
+          "score": 0.5215946435928345
+        },
+        {
+          "id": "https://openalex.org/keywords/dual",
+          "display_name": "Dual (grammatical number)",
+          "score": 0.5057919025421143
+        },
+        {
+          "id": "https://openalex.org/keywords/blood-pressure",
+          "display_name": "Blood pressure",
+          "score": 0.46666616201400757
+        },
+        {
+          "id": "https://openalex.org/keywords/speech-recognition",
+          "display_name": "Speech recognition",
+          "score": 0.4301111102104187
+        },
+        {
+          "id": "https://openalex.org/keywords/artificial-intelligence",
+          "display_name": "Artificial intelligence",
+          "score": 0.4248006343841553
+        },
+        {
+          "id": "https://openalex.org/keywords/pattern-recognition",
+          "display_name": "Pattern recognition (psychology)",
+          "score": 0.3338545560836792
+        },
+        {
+          "id": "https://openalex.org/keywords/telecommunications",
+          "display_name": "Telecommunications",
+          "score": 0.21076425909996033
+        },
+        {
+          "id": "https://openalex.org/keywords/medicine",
+          "display_name": "Medicine",
+          "score": 0.14564096927642822
+        },
+        {
+          "id": "https://openalex.org/keywords/internal-medicine",
+          "display_name": "Internal medicine",
+          "score": 0.14120492339134216
+        },
+        {
+          "id": "https://openalex.org/keywords/wireless",
+          "display_name": "Wireless",
+          "score": 0.0727505087852478
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C116390426",
+          "wikidata": "https://www.wikidata.org/wiki/Q7187885",
+          "display_name": "Photoplethysmogram",
+          "level": 3,
+          "score": 0.5374006032943726
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.5273730754852295
+        },
+        {
+          "id": "https://openalex.org/C2993831823",
+          "wikidata": "https://www.wikidata.org/wiki/Q11068",
+          "display_name": "Blood stream",
+          "level": 2,
+          "score": 0.5215946435928345
+        },
+        {
+          "id": "https://openalex.org/C2780980858",
+          "wikidata": "https://www.wikidata.org/wiki/Q110022",
+          "display_name": "Dual (grammatical number)",
+          "level": 2,
+          "score": 0.5057919025421143
+        },
+        {
+          "id": "https://openalex.org/C84393581",
+          "wikidata": "https://www.wikidata.org/wiki/Q82642",
+          "display_name": "Blood pressure",
+          "level": 2,
+          "score": 0.46666616201400757
+        },
+        {
+          "id": "https://openalex.org/C28490314",
+          "wikidata": "https://www.wikidata.org/wiki/Q189436",
+          "display_name": "Speech recognition",
+          "level": 1,
+          "score": 0.4301111102104187
+        },
+        {
+          "id": "https://openalex.org/C154945302",
+          "wikidata": "https://www.wikidata.org/wiki/Q11660",
+          "display_name": "Artificial intelligence",
+          "level": 1,
+          "score": 0.4248006343841553
+        },
+        {
+          "id": "https://openalex.org/C153180895",
+          "wikidata": "https://www.wikidata.org/wiki/Q7148389",
+          "display_name": "Pattern recognition (psychology)",
+          "level": 2,
+          "score": 0.3338545560836792
+        },
+        {
+          "id": "https://openalex.org/C76155785",
+          "wikidata": "https://www.wikidata.org/wiki/Q418",
+          "display_name": "Telecommunications",
+          "level": 1,
+          "score": 0.21076425909996033
+        },
+        {
+          "id": "https://openalex.org/C71924100",
+          "wikidata": "https://www.wikidata.org/wiki/Q11190",
+          "display_name": "Medicine",
+          "level": 0,
+          "score": 0.14564096927642822
+        },
+        {
+          "id": "https://openalex.org/C126322002",
+          "wikidata": "https://www.wikidata.org/wiki/Q11180",
+          "display_name": "Internal medicine",
+          "level": 1,
+          "score": 0.14120492339134216
+        },
+        {
+          "id": "https://openalex.org/C555944384",
+          "wikidata": "https://www.wikidata.org/wiki/Q249",
+          "display_name": "Wireless",
+          "level": 2,
+          "score": 0.0727505087852478
+        },
+        {
+          "id": "https://openalex.org/C124952713",
+          "wikidata": "https://www.wikidata.org/wiki/Q8242",
+          "display_name": "Literature",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C142362112",
+          "wikidata": "https://www.wikidata.org/wiki/Q735",
+          "display_name": "Art",
+          "level": 0,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 2,
+      "locations": [
+        {
+          "id": "doi:10.1109/jsen.2024.3512197",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1109/jsen.2024.3512197",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S189694085",
+            "display_name": "IEEE Sensors Journal",
+            "issn_l": "1530-437X",
+            "issn": [
+              "1530-437X",
+              "1558-1748",
+              "2379-9153"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-2",
+              "norway-2"
+            ],
+            "host_organization": "https://openalex.org/P4310321027",
+            "host_organization_name": "IEEE Sensors Council",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310321027",
+              "https://openalex.org/P4310319808"
+            ],
+            "host_organization_lineage_names": [
+              "IEEE Sensors Council",
+              "Institute of Electrical and Electronics Engineers"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "IEEE Sensors Journal",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:espace2.etsmtl.ca:30383",
+          "is_oa": false,
+          "landing_page_url": "https://espace2.etsmtl.ca/id/eprint/30383/",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306402392",
+            "display_name": "Espace \u00c9TS (ETS)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1341030882",
+            "host_organization_name": "Educational Testing Service",
+            "host_organization_lineage": [
+              "https://openalex.org/I1341030882"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Article publi\u00e9 dans une revue, r\u00e9vis\u00e9 par les pairs"
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "x_sdgs": [],
+      "study_designs": [],
+      "awards": [
+        {
+          "id": "https://openalex.org/G5887892801",
+          "display_name": null,
+          "funder_award_id": "RGPIN-2021-03924 (to M.F.)",
+          "funder_id": "https://openalex.org/F4320334593",
+          "funder_display_name": "Natural Sciences and Engineering Research Council of Canada"
+        },
+        {
+          "id": "https://openalex.org/G7248711174",
+          "display_name": "Unobtrusive Sleep Physiological Monitoring and Enhancement Technologies",
+          "funder_award_id": "rgpin-2021-03924",
+          "funder_id": "https://openalex.org/F4320334593",
+          "funder_display_name": "Natural Sciences and Engineering Research Council of Canada"
+        }
+      ],
+      "funders": [
+        {
+          "id": "https://openalex.org/F4320334593",
+          "display_name": "Natural Sciences and Engineering Research Council of Canada",
+          "ror": "https://ror.org/01h531d29"
+        }
+      ],
+      "has_content": {
+        "grobid_xml": false,
+        "pdf": false
+      },
+      "content_urls": null,
+      "referenced_works_count": 30,
+      "referenced_works": [
+        "https://openalex.org/W1954157498",
+        "https://openalex.org/W2017271435",
+        "https://openalex.org/W2041502303",
+        "https://openalex.org/W2078742622",
+        "https://openalex.org/W2162997503",
+        "https://openalex.org/W2396881363",
+        "https://openalex.org/W2565986458",
+        "https://openalex.org/W2626982355",
+        "https://openalex.org/W2906624315",
+        "https://openalex.org/W2948044158",
+        "https://openalex.org/W2965846681",
+        "https://openalex.org/W2997346981",
+        "https://openalex.org/W2998221251",
+        "https://openalex.org/W3023858750",
+        "https://openalex.org/W3046183008",
+        "https://openalex.org/W3083295672",
+        "https://openalex.org/W3106223021",
+        "https://openalex.org/W3138603577",
+        "https://openalex.org/W3164461680",
+        "https://openalex.org/W4238596924",
+        "https://openalex.org/W4281878921",
+        "https://openalex.org/W4319602646",
+        "https://openalex.org/W4320918015",
+        "https://openalex.org/W4366773847",
+        "https://openalex.org/W4380291157",
+        "https://openalex.org/W4385497948",
+        "https://openalex.org/W4386088314",
+        "https://openalex.org/W4396712949",
+        "https://openalex.org/W4400680432",
+        "https://openalex.org/W4402743549"
+      ],
+      "related_works": [
+        "https://openalex.org/W2732360296",
+        "https://openalex.org/W1994871954",
+        "https://openalex.org/W4297152434",
+        "https://openalex.org/W2072858761",
+        "https://openalex.org/W1540261775",
+        "https://openalex.org/W4239033438",
+        "https://openalex.org/W1968279762",
+        "https://openalex.org/W4318970012",
+        "https://openalex.org/W2170552210",
+        "https://openalex.org/W4378977086"
+      ],
+      "abstract_inverted_index": {
+        "Accurate": [
+          0
+        ],
+        "and": [
+          1,
+          19,
+          43,
+          76,
+          129,
+          137,
+          164,
+          178,
+          196,
+          217,
+          222
+        ],
+        "noninvasive": [
+          2
+        ],
+        "blood": [
+          3
+        ],
+        "pressure": [
+          4
+        ],
+        "(BP)": [
+          5
+        ],
+        "monitoring": [
+          6
+        ],
+        "is": [
+          7
+        ],
+        "essential": [
+          8
+        ],
+        "for": [
+          9,
+          21,
+          122,
+          160,
+          167,
+          188
+        ],
+        "managing": [
+          10
+        ],
+        "cardiovascular": [
+          11
+        ],
+        "health,": [
+          12
+        ],
+        "yet": [
+          13
+        ],
+        "traditional": [
+          14
+        ],
+        "cuff-based": [
+          15
+        ],
+        "methods": [
+          16
+        ],
+        "are": [
+          17,
+          90
+        ],
+        "uncomfortable": [
+          18
+        ],
+        "unsuitable": [
+          20
+        ],
+        "continuous": [
+          22
+        ],
+        "use.": [
+          23
+        ],
+        "Existing": [
+          24
+        ],
+        "cuffless": [
+          25
+        ],
+        "BP": [
+          26,
+          103,
+          123,
+          131,
+          162,
+          169
+        ],
+        "estimation": [
+          27
+        ],
+        "techniques": [
+          28
+        ],
+        "face": [
+          29
+        ],
+        "limitations": [
+          30
+        ],
+        "such": [
+          31
+        ],
+        "as": [
+          32
+        ],
+        "limited": [
+          33
+        ],
+        "feature": [
+          34,
+          86
+        ],
+        "extraction": [
+          35
+        ],
+        "capabilities,": [
+          36
+        ],
+        "which": [
+          37,
+          50
+        ],
+        "can": [
+          38
+        ],
+        "result": [
+          39
+        ],
+        "in": [
+          40,
+          219
+        ],
+        "lower": [
+          41
+        ],
+        "performance,": [
+          42
+        ],
+        "validation": [
+          44
+        ],
+        "on": [
+          45,
+          113,
+          141
+        ],
+        "nonstandard": [
+          46
+        ],
+        "or": [
+          47
+        ],
+        "small": [
+          48
+        ],
+        "datasets,": [
+          49
+        ],
+        "raises": [
+          51
+        ],
+        "concerns": [
+          52
+        ],
+        "about": [
+          53
+        ],
+        "generalizability.": [
+          54
+        ],
+        "To": [
+          55
+        ],
+        "address": [
+          56
+        ],
+        "these": [
+          57
+        ],
+        "challenges,": [
+          58
+        ],
+        "we": [
+          59,
+          109
+        ],
+        "propose": [
+          60
+        ],
+        "a": [
+          61,
+          93,
+          152
+        ],
+        "novel": [
+          62
+        ],
+        "convolutional": [
+          63
+        ],
+        "neural": [
+          64
+        ],
+        "network": [
+          65,
+          96
+        ],
+        "(CNN)-long": [
+          66
+        ],
+        "short-term": [
+          67
+        ],
+        "memory": [
+          68
+        ],
+        "(LSTM)": [
+          69
+        ],
+        "architecture": [
+          70
+        ],
+        "that": [
+          71,
+          97
+        ],
+        "independently": [
+          72
+        ],
+        "processes": [
+          73
+        ],
+        "photoplethysmogram": [
+          74
+        ],
+        "(PPG)": [
+          75
+        ],
+        "electrocardiogram": [
+          77
+        ],
+        "(ECG)": [
+          78
+        ],
+        "signals": [
+          79
+        ],
+        "through": [
+          80
+        ],
+        "separate": [
+          81
+        ],
+        "CNN": [
+          82
+        ],
+        "layers,": [
+          83
+        ],
+        "enhancing": [
+          84
+        ],
+        "morphological": [
+          85
+        ],
+        "extraction.": [
+          87
+        ],
+        "These": [
+          88,
+          180
+        ],
+        "layers": [
+          89
+        ],
+        "followed": [
+          91
+        ],
+        "by": [
+          92,
+          201
+        ],
+        "multilayer": [
+          94
+        ],
+        "Bi-LSTM": [
+          95
+        ],
+        "captures": [
+          98
+        ],
+        "long-term": [
+          99
+        ],
+        "temporal": [
+          100
+        ],
+        "dependencies,": [
+          101
+        ],
+        "improving": [
+          102
+        ],
+        "prediction": [
+          104
+        ],
+        "accuracy.": [
+          105
+        ],
+        "Unlike": [
+          106
+        ],
+        "prior": [
+          107
+        ],
+        "studies,": [
+          108
+        ],
+        "validate": [
+          110
+        ],
+        "our": [
+          111,
+          149
+        ],
+        "method": [
+          112
+        ],
+        "the": [
+          114,
+          117,
+          135,
+          189,
+          208
+        ],
+        "PulseDB": [
+          115
+        ],
+        "dataset,": [
+          116
+        ],
+        "largest": [
+          118
+        ],
+        "publicly": [
+          119
+        ],
+        "available": [
+          120
+        ],
+        "dataset": [
+          121
+        ],
+        "estimation,": [
+          124
+        ],
+        "comprising": [
+          125
+        ],
+        "cleaned": [
+          126
+        ],
+        "PPG,": [
+          127
+        ],
+        "ECG,": [
+          128
+        ],
+        "arterial": [
+          130
+        ],
+        "(ABP)": [
+          132
+        ],
+        "waveforms": [
+          133
+        ],
+        "from": [
+          134,
+          143
+        ],
+        "MIMIC-III": [
+          136
+        ],
+        "VitalDB": [
+          138
+        ],
+        "databases.": [
+          139
+        ],
+        "Evaluated": [
+          140
+        ],
+        "data": [
+          142
+        ],
+        "3027": [
+          144
+        ],
+        "individuals": [
+          145
+        ],
+        "using": [
+          146
+        ],
+        "fivefold": [
+          147
+        ],
+        "cross-validation,": [
+          148
+        ],
+        "model": [
+          150
+        ],
+        "achieved": [
+          151,
+          197
+        ],
+        "mean": [
+          153
+        ],
+        "absolute": [
+          154
+        ],
+        "error": [
+          155
+        ],
+        "(MAE)": [
+          156
+        ],
+        "of": [
+          157,
+          191,
+          210
+        ],
+        "5.16": [
+          158
+        ],
+        "mmHg": [
+          159,
+          166
+        ],
+        "systolic": [
+          161
+        ],
+        "(SBP)": [
+          163
+        ],
+        "3.24": [
+          165
+        ],
+        "diastolic": [
+          168
+        ],
+        "(DBP),": [
+          170
+        ],
+        "with": [
+          171
+        ],
+        "consistent": [
+          172
+        ],
+        "performance": [
+          173
+        ],
+        "across": [
+          174
+        ],
+        "various": [
+          175
+        ],
+        "age": [
+          176
+        ],
+        "groups": [
+          177
+        ],
+        "genders.": [
+          179
+        ],
+        "results": [
+          181
+        ],
+        "surpassed": [
+          182
+        ],
+        "American": [
+          183
+        ],
+        "National": [
+          184
+        ],
+        "Standards": [
+          185
+        ],
+        "Institute": [
+          186
+        ],
+        "(ANSI)/Association": [
+          187
+        ],
+        "Advancement": [
+          190
+        ],
+        "Medical": [
+          192
+        ],
+        "Instrumentation": [
+          193
+        ],
+        "(AAMI)": [
+          194
+        ],
+        "standards": [
+          195
+        ],
+        "an": [
+          198
+        ],
+        "\u201cA\u201d": [
+          199
+        ],
+        "grade": [
+          200
+        ],
+        "British": [
+          202
+        ],
+        "Hypertension": [
+          203
+        ],
+        "Society": [
+          204
+        ],
+        "(BHS)": [
+          205
+        ],
+        "standards,": [
+          206
+        ],
+        "demonstrating": [
+          207
+        ],
+        "potential": [
+          209
+        ],
+        "this": [
+          211
+        ],
+        "approach": [
+          212
+        ],
+        "to": [
+          213
+        ],
+        "improve": [
+          214
+        ],
+        "patient": [
+          215
+        ],
+        "comfort": [
+          216
+        ],
+        "care": [
+          218
+        ],
+        "diverse": [
+          220
+        ],
+        "clinical": [
+          221
+        ],
+        "home": [
+          223
+        ],
+        "environments.": [
+          224
+        ]
+      },
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 11
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 6
+        }
+      ],
+      "updated_date": "2026-09-11T09:22:31.653822",
+      "created_date": "2025-10-10T00:00:00"
+    }
+  ],
+  "group_by": []
+}
+

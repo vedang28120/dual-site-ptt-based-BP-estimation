@@ -1,0 +1,1148 @@
+{
+  "hitCount": 24,
+  "nextCursorMark": "AoIIQQieNig1NTk3OTY0NQ==",
+  "results": [
+    {
+      "id": "41755183",
+      "source": "MED",
+      "pmid": "41755183",
+      "pmcid": "PMC12944147",
+      "fullTextIdList": {
+        "fullTextId": [
+          "PMC12944147"
+        ]
+      },
+      "doi": "10.3390/s26041243",
+      "title": "Beyond the Cuff: State-of-the-Art on Cuffless Blood Pressure Monitoring.",
+      "authorString": "Shafti Y, Hughes S, Taylor W, Imran MA, Owens D, Ansari S.",
+      "authorList": {
+        "author": [
+          {
+            "fullName": "Shafti Y",
+            "lastName": "Shafti",
+            "firstName": "Yaheya",
+            "initials": "Y",
+            "authorId": {
+              "type": "ORCID",
+              "value": "0009-0006-4577-3412"
+            },
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "James Watt School of Engineering, University of Glasgow, Glasgow G12 8QQ, UK."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Hughes S",
+            "lastName": "Hughes",
+            "firstName": "Steven",
+            "initials": "S",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "James Watt School of Engineering, University of Glasgow, Glasgow G12 8QQ, UK."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Taylor W",
+            "lastName": "Taylor",
+            "firstName": "William",
+            "initials": "W",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "James Watt School of Engineering, University of Glasgow, Glasgow G12 8QQ, UK."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Imran MA",
+            "lastName": "Imran",
+            "firstName": "Muhammad A",
+            "initials": "MA",
+            "authorId": {
+              "type": "ORCID",
+              "value": "0000-0003-4743-9136"
+            },
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "James Watt School of Engineering, University of Glasgow, Glasgow G12 8QQ, UK."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Owens D",
+            "lastName": "Owens",
+            "firstName": "David",
+            "initials": "D",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "James Watt School of Engineering, University of Glasgow, Glasgow G12 8QQ, UK."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Ansari S",
+            "lastName": "Ansari",
+            "firstName": "Shuja",
+            "initials": "S",
+            "authorId": {
+              "type": "ORCID",
+              "value": "0000-0003-2071-0264"
+            },
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "James Watt School of Engineering, University of Glasgow, Glasgow G12 8QQ, UK."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "authorIdList": {
+        "authorId": [
+          {
+            "type": "ORCID",
+            "value": "0000-0003-2071-0264"
+          },
+          {
+            "type": "ORCID",
+            "value": "0000-0003-4743-9136"
+          },
+          {
+            "type": "ORCID",
+            "value": "0009-0006-4577-3412"
+          }
+        ]
+      },
+      "dataLinksTagsList": {
+        "dataLinkstag": [
+          "supporting_data"
+        ]
+      },
+      "journalInfo": {
+        "issue": "4",
+        "volume": "26",
+        "journalIssueId": 4132793,
+        "dateOfPublication": "2026 Feb",
+        "monthOfPublication": 2,
+        "yearOfPublication": 2026,
+        "journal": {
+          "medlineAbbreviation": "Sensors (Basel)",
+          "title": "Sensors (Basel, Switzerland)",
+          "essn": "1424-8220",
+          "issn": "1424-8220",
+          "nlmid": "101204366",
+          "isoabbreviation": "Sensors (Basel)"
+        },
+        "printPublicationDate": "2026-02-01"
+      },
+      "pubYear": "2026",
+      "pageInfo": "1243",
+      "abstractText": "Blood pressure (BP) monitoring is crucial for identifying high BP (hypertension) and is an important aspect of patient care. However, traditional cuff-based methods for BP monitoring are unsuitable for continuous monitoring and can cause discomfort to patients. This survey critically examines the emerging field of cuffless BP monitoring, highlighting advances beyond traditional cuff-based methods. Technologies such as radar, optical, acoustic, and capacitive sensors offer the potential for continuous, non-invasive BP estimation, enabling applications in remote health monitoring and ambient clinical intelligence. We introduce a unifying taxonomy covering sensing modalities, physiological measurement principles, signal processing techniques, and translational challenges. Emphasis is placed on methods that eliminate subject-specific calibration, overcome motion artifacts, and satisfy international validation standards. The review also analyses Machine Learning (ML) and sensor fusion approaches that enhance predictive accuracy. Despite encouraging results, challenges remain in achieving clinically acceptable accuracy across diverse populations and real-world conditions. This work delineates the current landscape, benchmarks performance against gold standards, and identifies key future directions for scalable, explainable, and regulatory-compliant BP monitoring systems.",
+      "affiliation": "James Watt School of Engineering, University of Glasgow, Glasgow G12 8QQ, UK.",
+      "publicationStatus": "epublish",
+      "language": "eng",
+      "pubModel": "Electronic",
+      "pubTypeList": {
+        "pubType": [
+          "review-article",
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "meshHeadingList": {
+        "meshHeading": [
+          {
+            "majorTopic_YN": "N",
+            "descriptorName": "Humans"
+          },
+          {
+            "majorTopic_YN": "N",
+            "descriptorName": "Hypertension",
+            "meshQualifierList": {
+              "meshQualifier": [
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "DI",
+                  "qualifierName": "diagnosis"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "PP",
+                  "qualifierName": "physiopathology"
+                }
+              ]
+            }
+          },
+          {
+            "majorTopic_YN": "Y",
+            "descriptorName": "Blood Pressure Determination",
+            "meshQualifierList": {
+              "meshQualifier": [
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "MT",
+                  "qualifierName": "methods"
+                }
+              ]
+            }
+          },
+          {
+            "majorTopic_YN": "N",
+            "descriptorName": "Blood Pressure Monitors"
+          },
+          {
+            "majorTopic_YN": "Y",
+            "descriptorName": "Blood Pressure",
+            "meshQualifierList": {
+              "meshQualifier": [
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "PH",
+                  "qualifierName": "physiology"
+                }
+              ]
+            }
+          },
+          {
+            "majorTopic_YN": "N",
+            "descriptorName": "Signal Processing, Computer-Assisted"
+          },
+          {
+            "majorTopic_YN": "N",
+            "descriptorName": "Machine Learning"
+          }
+        ]
+      },
+      "keywordList": {
+        "keyword": [
+          "Blood pressure",
+          "Acoustic",
+          "Radar",
+          "Optical",
+          "Sensing",
+          "Capacitive",
+          "Cuffless"
+        ]
+      },
+      "subsetList": {
+        "subset": [
+          {
+            "code": "IM",
+            "name": "Index Medicus"
+          }
+        ]
+      },
+      "fullTextUrlList": {
+        "fullTextUrl": [
+          {
+            "availability": "Subscription required",
+            "availabilityCode": "S",
+            "documentStyle": "doi",
+            "site": "DOI",
+            "url": "https://doi.org/10.3390/s26041243"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "html",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC12944147"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "pdf",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC12944147?pdf=render"
+          }
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "citedByCount": 1,
+      "hasReferences": "Y",
+      "hasTextMinedTerms": "Y",
+      "hasDbCrossReferences": "N",
+      "hasPDF": "Y",
+      "hasBook": "N",
+      "hasSuppl": "N",
+      "hasLabsLinks": "N",
+      "hasData": "Y",
+      "license": "cc by",
+      "authMan": "N",
+      "epmcAuthMan": "N",
+      "nihAuthMan": "N",
+      "hasTMAccessionNumbers": "Y",
+      "tmAccessionTypeList": {
+        "accessionType": [
+          "doi"
+        ]
+      },
+      "dateOfCompletion": "2026-07-09",
+      "dateOfCreation": "2026-02-27",
+      "dateOfRevision": "2026-08-13",
+      "electronicPublicationDate": "2026-02-14",
+      "firstPublicationDate": "2026-02-14",
+      "firstIndexDate": "2026-02-27",
+      "fullTextReceivedDate": "2026-02-27",
+      "hasEvaluations": "N"
+    },
+    {
+      "id": "42098332",
+      "source": "MED",
+      "pmid": "42098332",
+      "pmcid": "PMC13333497",
+      "fullTextIdList": {
+        "fullTextId": [
+          "PMC13333497"
+        ]
+      },
+      "doi": "10.1038/s41440-026-02651-3",
+      "title": "Advancements and challenges in blood pressure monitoring using pulse wave propagation: a comprehensive review and ISO 81060-2 based statistical analysis.",
+      "authorString": "Yu Y, Lowe A.",
+      "authorList": {
+        "author": [
+          {
+            "fullName": "Yu Y",
+            "lastName": "Yu",
+            "firstName": "Yang",
+            "initials": "Y",
+            "authorId": {
+              "type": "ORCID",
+              "value": "0000-0002-7673-8090"
+            },
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "AUT Institute of Biomedical Technologies (IBTec), Auckland University of Technology, Auckland, New Zealand. yyu@aut.ac.nz."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Lowe A",
+            "lastName": "Lowe",
+            "firstName": "Andrew",
+            "initials": "A",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "AUT Institute of Biomedical Technologies (IBTec), Auckland University of Technology, Auckland, New Zealand."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "authorIdList": {
+        "authorId": [
+          {
+            "type": "ORCID",
+            "value": "0000-0002-7673-8090"
+          }
+        ]
+      },
+      "dataLinksTagsList": {
+        "dataLinkstag": [
+          "supporting_data"
+        ]
+      },
+      "journalInfo": {
+        "issue": "7",
+        "volume": "49",
+        "journalIssueId": 4227087,
+        "dateOfPublication": "2026 Jul",
+        "monthOfPublication": 7,
+        "yearOfPublication": 2026,
+        "journal": {
+          "medlineAbbreviation": "Hypertens Res",
+          "title": "Hypertension research : official journal of the Japanese Society of Hypertension",
+          "essn": "1348-4214",
+          "issn": "0916-9636",
+          "nlmid": "9307690",
+          "isoabbreviation": "Hypertens Res"
+        },
+        "printPublicationDate": "2026-07-01"
+      },
+      "pubYear": "2026",
+      "pageInfo": "2156-2180",
+      "abstractText": "Cardiovascular diseases, particularly hypertension, remain a major global health burden, highlighting the need for accurate and accessible blood pressure (BP) monitoring. Cuffless BP measurement (BPM) based on pulse wave propagation methods (PWPM), including pulse arrival time (PAT), pulse transit time (PTT), and pulse wave velocity (PWV), has attracted increasing research interest. This review comprises two components. First, a narrative review of studies published up to June 2025 examines sensing technologies, mathematical models, and validation protocols used in PWPM-based BPM. Second, a statistical re-evaluation of 22 studies published between 2015 and 2025 was conducted using the Credence of Device Acceptability (CDA) and the Probability of Tolerable Error (PTE), grounded in the statistical principles of ISO 81060-2. Accuracy varied widely across physiological conditions, sensing technologies, and study designs, with no single approach demonstrating consistent superiority. The re-evaluation provided a more stringent assessment of performance: only five studies achieved CDA values exceeding 0.95 for both systolic and diastolic BP. Overall, diastolic BP estimation demonstrated superior accuracy compared with systolic BP. Incorporating physiological indices such as arterial compliance and sympathetic activity may improve the robustness and accuracy of BP estimation models. While machine learning shows promise for enhanced feature extraction, calibration tolerance and real-world reliability remain critical challenges. Importantly, the evaluation and development of cuffless BPM technologies should align with validation standards appropriate to the intended application. We recommend that future early-stage studies apply the CDA and PTE framework as supportive accuracy metrics to better assess methodological performance and inform device development and validation.",
+      "affiliation": "AUT Institute of Biomedical Technologies (IBTec), Auckland University of Technology, Auckland, New Zealand. yyu@aut.ac.nz.",
+      "publicationStatus": "ppublish",
+      "language": "eng",
+      "pubModel": "Print-Electronic",
+      "pubTypeList": {
+        "pubType": [
+          "review-article",
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "meshHeadingList": {
+        "meshHeading": [
+          {
+            "majorTopic_YN": "N",
+            "descriptorName": "Humans"
+          },
+          {
+            "majorTopic_YN": "N",
+            "descriptorName": "Hypertension",
+            "meshQualifierList": {
+              "meshQualifier": [
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "DI",
+                  "qualifierName": "diagnosis"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "PP",
+                  "qualifierName": "physiopathology"
+                }
+              ]
+            }
+          },
+          {
+            "majorTopic_YN": "Y",
+            "descriptorName": "Blood Pressure Determination",
+            "meshQualifierList": {
+              "meshQualifier": [
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "MT",
+                  "qualifierName": "methods"
+                }
+              ]
+            }
+          },
+          {
+            "majorTopic_YN": "Y",
+            "descriptorName": "Blood Pressure",
+            "meshQualifierList": {
+              "meshQualifier": [
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "PH",
+                  "qualifierName": "physiology"
+                }
+              ]
+            }
+          },
+          {
+            "majorTopic_YN": "Y",
+            "descriptorName": "Pulse Wave Analysis",
+            "meshQualifierList": {
+              "meshQualifier": [
+                {
+                  "majorTopic_YN": "N",
+                  "abbreviation": "MT",
+                  "qualifierName": "methods"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "keywordList": {
+        "keyword": [
+          "Pulse Wave Propagation",
+          "Morning Hypertension",
+          "Device Accuracy",
+          "Digital Hypertension",
+          "Cuffless Blood Pressure Monitoring",
+          "Implemental Hypertension"
+        ]
+      },
+      "subsetList": {
+        "subset": [
+          {
+            "code": "IM",
+            "name": "Index Medicus"
+          }
+        ]
+      },
+      "fullTextUrlList": {
+        "fullTextUrl": [
+          {
+            "availability": "Subscription required",
+            "availabilityCode": "S",
+            "documentStyle": "doi",
+            "site": "DOI",
+            "url": "https://doi.org/10.1038/s41440-026-02651-3"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "html",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC13333497"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "pdf",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC13333497?pdf=render"
+          }
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "citedByCount": 0,
+      "hasReferences": "Y",
+      "hasTextMinedTerms": "Y",
+      "hasDbCrossReferences": "N",
+      "hasPDF": "Y",
+      "hasBook": "N",
+      "hasSuppl": "Y",
+      "hasLabsLinks": "N",
+      "hasData": "Y",
+      "license": "cc by",
+      "authMan": "N",
+      "epmcAuthMan": "N",
+      "nihAuthMan": "N",
+      "hasTMAccessionNumbers": "Y",
+      "tmAccessionTypeList": {
+        "accessionType": [
+          "doi"
+        ]
+      },
+      "dateOfCompletion": "2026-07-05",
+      "dateOfCreation": "2026-05-07",
+      "dateOfRevision": "2026-08-13",
+      "electronicPublicationDate": "2026-05-07",
+      "firstPublicationDate": "2026-05-07",
+      "firstIndexDate": "2026-05-13",
+      "fullTextReceivedDate": "2026-09-03",
+      "hasEvaluations": "N"
+    },
+    {
+      "id": "41682799",
+      "source": "MED",
+      "pmid": "41682799",
+      "pmcid": "PMC12898464",
+      "fullTextIdList": {
+        "fullTextId": [
+          "PMC12898464"
+        ]
+      },
+      "doi": "10.3390/jcm15031118",
+      "title": "Pulse Waveform Changes During Vasopressor Therapy Assessed Using Remote Photoplethysmography: A Case Series.",
+      "authorString": "Klibus M, Serova V, Rubins U, Marcinkevics Z, Grabovskis A, Sabelnikovs O.",
+      "authorList": {
+        "author": [
+          {
+            "fullName": "Klibus M",
+            "lastName": "Klibus",
+            "firstName": "Mara",
+            "initials": "M",
+            "authorId": {
+              "type": "ORCID",
+              "value": "0000-0003-1533-5746"
+            },
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Department of Anaesthesiology, Intensive Care and Clinical Simulations, Riga Stradins University, LV-1007 Riga, Latvia."
+                },
+                {
+                  "affiliation": "Department of Intensive Care, Pauls Stradins Clinical University Hospital, LV-1002 Riga, Latvia."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Serova V",
+            "lastName": "Serova",
+            "firstName": "Viktorija",
+            "initials": "V",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Department of Anaesthesiology, Intensive Care and Clinical Simulations, Riga Stradins University, LV-1007 Riga, Latvia."
+                },
+                {
+                  "affiliation": "Department of Intensive Care, Pauls Stradins Clinical University Hospital, LV-1002 Riga, Latvia."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Rubins U",
+            "lastName": "Rubins",
+            "firstName": "Uldis",
+            "initials": "U",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Faculty of Science and Technology, University of Latvia, LV-1586 Riga, Latvia."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Marcinkevics Z",
+            "lastName": "Marcinkevics",
+            "firstName": "Zbignevs",
+            "initials": "Z",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Faculty of Medicine and Life Sciences, University of Latvia, LV-1586 Riga, Latvia."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Grabovskis A",
+            "lastName": "Grabovskis",
+            "firstName": "Andris",
+            "initials": "A",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Faculty of Science and Technology, University of Latvia, LV-1586 Riga, Latvia."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Sabelnikovs O",
+            "lastName": "Sabelnikovs",
+            "firstName": "Olegs",
+            "initials": "O",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Department of Anaesthesiology, Intensive Care and Clinical Simulations, Riga Stradins University, LV-1007 Riga, Latvia."
+                },
+                {
+                  "affiliation": "Department of Intensive Care, Pauls Stradins Clinical University Hospital, LV-1002 Riga, Latvia."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "authorIdList": {
+        "authorId": [
+          {
+            "type": "ORCID",
+            "value": "0000-0003-1533-5746"
+          }
+        ]
+      },
+      "dataLinksTagsList": {
+        "dataLinkstag": [
+          "supporting_data"
+        ]
+      },
+      "journalInfo": {
+        "issue": "3",
+        "volume": "15",
+        "journalIssueId": 4120562,
+        "dateOfPublication": "2026 Jan",
+        "monthOfPublication": 1,
+        "yearOfPublication": 2026,
+        "journal": {
+          "medlineAbbreviation": "J Clin Med",
+          "title": "Journal of clinical medicine",
+          "essn": "2077-0383",
+          "issn": "2077-0383",
+          "nlmid": "101606588",
+          "isoabbreviation": "J Clin Med"
+        },
+        "printPublicationDate": "2026-01-01"
+      },
+      "pubYear": "2026",
+      "pageInfo": "1118",
+      "abstractText": "<b>Background/Objectives</b>: Septic shock involves severe circulatory and microcirculatory dysfunction and often requires vasopressors to maintain adequate mean arterial pressure (MAP). Conventional monitoring mainly reflects macrocirculation and may not capture changes in vascular tone or microcirculation. Remote photoplethysmography (rPPG) is a contactless optical method that analyzes peripheral pulse waveforms and may offer additional physiological insight during vasopressor therapy. The aim of this study was to assess the feasibility of rPPG for detecting pulse waveform changes associated with norepinephrine administration in septic shock. <b>Methods:</b> Prospective case series included three adult patients (<i>n</i> = 3) with septic shock admitted to the intensive care unit at Pauls Stradins Clinical University Hospital, Riga, Latvia. All patients received standard sepsis treatment, including fluid resuscitation and titrated norepinephrine to maintain MAP \u2265 65 mmHg. Continuous invasive arterial pressure monitoring was performed alongside rPPG signal acquisition from the palmar skin surface under controlled lighting. From averaged rPPG waveforms, perfusion index (PI), dicrotic notch amplitude (c-wave), and diastolic wave amplitude (d-wave) were extracted. Correlations between norepinephrine dose, MAP, and rPPG parameters were explored. <b>Results:</b> Increasing norepinephrine doses were associated with higher MAP and PI in all patients. Dicrotic notch and diastolic wave amplitude decreased consistently. These changes occurred alongside macrocirculatory stabilization and are consistent with increased vascular tone and altered arterial compliance. <b>Conclusions:</b> rPPG demonstrated feasibility for detecting pulse waveform changes during norepinephrine therapy in septic shock; however, larger controlled studies are required for validation.",
+      "affiliation": "Department of Anaesthesiology, Intensive Care and Clinical Simulations, Riga Stradins University, LV-1007 Riga, Latvia.",
+      "publicationStatus": "epublish",
+      "language": "eng",
+      "pubModel": "Electronic",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article",
+          "Case Reports",
+          "case-report"
+        ]
+      },
+      "grantsList": {
+        "grant": [
+          {
+            "agency": "This research was funded by the Latvian Council of Science under the project FLPP",
+            "grantId": "This research was funded by the Latvian Council of Science under the project FLPP-No. lzp-2022/1-0326, \"Development and Application of a Multiparametric Optical Technique for Guiding Fluid Resuscitation and Vasopressor Therapy in Critically Ill COVID-19 P",
+            "orderIn": 0
+          },
+          {
+            "agency": "Latvian Council of Science",
+            "grantId": "lzp-2022/1-0326",
+            "orderIn": 0
+          }
+        ]
+      },
+      "keywordList": {
+        "keyword": [
+          "Norepinephrine",
+          "Microcirculation",
+          "Septic shock",
+          "Vasopressors",
+          "Perfusion Index",
+          "Remote Photoplethysmography"
+        ]
+      },
+      "fullTextUrlList": {
+        "fullTextUrl": [
+          {
+            "availability": "Subscription required",
+            "availabilityCode": "S",
+            "documentStyle": "doi",
+            "site": "DOI",
+            "url": "https://doi.org/10.3390/jcm15031118"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "html",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC12898464"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "pdf",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC12898464?pdf=render"
+          }
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "citedByCount": 1,
+      "hasReferences": "Y",
+      "hasTextMinedTerms": "Y",
+      "hasDbCrossReferences": "N",
+      "hasPDF": "Y",
+      "hasBook": "N",
+      "hasSuppl": "N",
+      "hasLabsLinks": "N",
+      "hasData": "Y",
+      "license": "cc by",
+      "authMan": "N",
+      "epmcAuthMan": "N",
+      "nihAuthMan": "N",
+      "hasTMAccessionNumbers": "Y",
+      "tmAccessionTypeList": {
+        "accessionType": [
+          "doi"
+        ]
+      },
+      "dateOfCompletion": "2026-02-13",
+      "dateOfCreation": "2026-02-13",
+      "dateOfRevision": "2026-02-16",
+      "electronicPublicationDate": "2026-01-30",
+      "firstPublicationDate": "2026-01-30",
+      "firstIndexDate": "2026-02-13",
+      "fullTextReceivedDate": "2026-02-14",
+      "hasEvaluations": "N"
+    },
+    {
+      "id": "PMC12949051",
+      "source": "PMC",
+      "pmcid": "PMC12949051",
+      "fullTextIdList": {
+        "fullTextId": [
+          "PMC12949051"
+        ]
+      },
+      "title": "Advances in principles and technologies of non-mechanical blood pressure monitoring",
+      "authorString": "Zheng Z, Hao H, Huang Y, Lyu R, Ma H, Zhang Y, Liu J, Shao C, Zhou A.",
+      "authorList": {
+        "author": [
+          {
+            "fullName": "Zheng Z",
+            "lastName": "Zheng",
+            "firstName": "Zixin",
+            "initials": "Z",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Hao H",
+            "lastName": "Hao",
+            "firstName": "He",
+            "initials": "H",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Huang Y",
+            "lastName": "Huang",
+            "firstName": "Yiwen",
+            "initials": "Y",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Lyu R",
+            "lastName": "Lyu",
+            "firstName": "Rui",
+            "initials": "R",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Ma H",
+            "lastName": "Ma",
+            "firstName": "Huadong",
+            "initials": "H",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Zhang Y",
+            "lastName": "Zhang",
+            "firstName": "Yuqing",
+            "initials": "Y",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Liu J",
+            "lastName": "Liu",
+            "firstName": "Jing",
+            "initials": "J",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Shao C",
+            "lastName": "Shao",
+            "firstName": "Chunli",
+            "initials": "C",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Zhou A",
+            "lastName": "Zhou",
+            "firstName": "Anfu",
+            "initials": "A",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Beijing, China"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "journalInfo": {
+        "volume": "3",
+        "journalIssueId": 4128066,
+        "dateOfPublication": "2026 Jan",
+        "monthOfPublication": 1,
+        "yearOfPublication": 2026,
+        "journal": {
+          "medlineAbbreviation": "NPJ Cardiovasc Health",
+          "title": "NPJ cardiovascular health",
+          "essn": "2948-2836",
+          "issn": "2948-2836",
+          "nlmid": "9918898840606676",
+          "isoabbreviation": "NPJ Cardiovasc Health"
+        },
+        "printPublicationDate": "2026-01-01"
+      },
+      "pubYear": "2026",
+      "language": "eng",
+      "pubModel": "Undetermined",
+      "pubTypeList": {
+        "pubType": [
+          "review-article",
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "keywordList": {
+        "keyword": [
+          "Engineering",
+          "Health care",
+          "Cardiology",
+          "Computational Biology And Bioinformatics",
+          "Mathematics And Computing"
+        ]
+      },
+      "fullTextUrlList": {
+        "fullTextUrl": [
+          {
+            "availability": "Free",
+            "availabilityCode": "F",
+            "documentStyle": "html",
+            "site": "PubMedCentral",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12949051/?tool=EBI"
+          },
+          {
+            "availability": "Free",
+            "availabilityCode": "F",
+            "documentStyle": "pdf",
+            "site": "PubMedCentral",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12949051/pdf/?tool=EBI"
+          },
+          {
+            "availability": "Free",
+            "availabilityCode": "F",
+            "documentStyle": "html",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC12949051"
+          },
+          {
+            "availability": "Free",
+            "availabilityCode": "F",
+            "documentStyle": "pdf",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC12949051?pdf=render"
+          }
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "citedByCount": 0,
+      "hasReferences": "N",
+      "hasTextMinedTerms": "Y",
+      "hasDbCrossReferences": "N",
+      "hasPDF": "Y",
+      "hasBook": "N",
+      "hasSuppl": "N",
+      "hasLabsLinks": "N",
+      "hasData": "N",
+      "license": "cc by",
+      "authMan": "N",
+      "epmcAuthMan": "N",
+      "nihAuthMan": "N",
+      "hasTMAccessionNumbers": "N",
+      "dateOfCreation": "2026-03-01",
+      "dateOfRevision": "2026-09-26",
+      "electronicPublicationDate": "2026-01-01",
+      "firstPublicationDate": "2026-01-01",
+      "firstIndexDate": "2026-03-01",
+      "fullTextReceivedDate": "2026-03-01",
+      "hasEvaluations": "N"
+    },
+    {
+      "id": "42460368",
+      "source": "MED",
+      "pmid": "42460368",
+      "pmcid": "PMC13372377",
+      "fullTextIdList": {
+        "fullTextId": [
+          "PMC13372377"
+        ]
+      },
+      "doi": "10.1364/boe.599752",
+      "title": "Missed isochromatic cardiac pulsation in remote photoplethysmography: detection, impact, and removal.",
+      "authorString": "Kaur G, Lakshminarayanan V, Saini SS.",
+      "authorList": {
+        "author": [
+          {
+            "fullName": "Kaur G",
+            "lastName": "Kaur",
+            "firstName": "Gurnoor",
+            "initials": "G",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Cameron Heights Collegiate Institute, 301 Charles St E, Kitchener, ON N2G 2P8, Canada."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Lakshminarayanan V",
+            "lastName": "Lakshminarayanan",
+            "firstName": "Vasudevan",
+            "initials": "V",
+            "authorId": {
+              "type": "ORCID",
+              "value": "0000-0002-3473-1245"
+            },
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "School of Optometry, University of Waterloo, 200 University Ave W, Waterloo, ON, N2L 3G1, Canada."
+                }
+              ]
+            }
+          },
+          {
+            "fullName": "Saini SS",
+            "lastName": "Saini",
+            "firstName": "Simarjeet Singh",
+            "initials": "SS",
+            "authorAffiliationDetailsList": {
+              "authorAffiliation": [
+                {
+                  "affiliation": "Department of Electrical and Computer Engineering, University of Waterloo, 200 University Ave W, Waterloo, ON, N2L 3G1, Canada."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "authorIdList": {
+        "authorId": [
+          {
+            "type": "ORCID",
+            "value": "0000-0002-3473-1245"
+          }
+        ]
+      },
+      "dataLinksTagsList": {
+        "dataLinkstag": [
+          "supporting_data"
+        ]
+      },
+      "journalInfo": {
+        "issue": "7",
+        "volume": "17",
+        "journalIssueId": 4230771,
+        "dateOfPublication": "2026 Jul",
+        "monthOfPublication": 7,
+        "yearOfPublication": 2026,
+        "journal": {
+          "medlineAbbreviation": "Biomed Opt Express",
+          "title": "Biomedical optics express",
+          "essn": "2156-7085",
+          "issn": "2156-7085",
+          "nlmid": "101540630",
+          "isoabbreviation": "Biomed Opt Express"
+        },
+        "printPublicationDate": "2026-07-01"
+      },
+      "pubYear": "2026",
+      "pageInfo": "3832-3853",
+      "abstractText": "Remote photoplethysmography (rPPG) extracts the cardiac pulse from facial video by isolating chromatic variation due to wavelength-dependent hemoglobin absorption. We report that this signal model is incomplete. A second cardiac-frequency signal is present in skin video: an isochromatic pulsation along the skin's mean reflectance direction, arising from ballistocardiographic modulation of skin surface geometry and changes in the effective scattering cross-section of the dermal vascular bed. This isochromatic component is conflated with the chromatic signal by every rPPG method we evaluated, including chrominance-based methods (POS, CHROM) and other projection or decomposition methods (OMIT, LGI, PBV, ICA). The two signals share the cardiac frequency but differ in phase and signal fidelity, and their relative directions vary with skin tone, lighting, and recording conditions. To assess whether the isochromatic component contributes significant error to rPPG, we constructed chrominance Phase-Aware Cardiac Eigenprojection (cPACE), a method that removes the isochromatic direction via a subject-adaptive projection orthogonal to the measured skin reflectance before extracting the cardiac signal through eigen-vector projection. Across UBFC-Phys (rest and speech) and the CMU-rPPG India and Sierra Leone cohorts, cross-ROI phase-locking values of the recovered signal are systematically higher under cPACE than under any other method evaluated, indicating cleaner waveform recovery. The resulting heart rate estimates achieve mean absolute error of 1.7, 3.7, 1.7, and 1.1 BPM, respectively, on these cohorts, compared to 2.8, 9.5, 16.8, and 17.8 BPM for POS with homodyne envelope correction applied for parity. Together, these results show that the isochromatic component is a major source of error in existing rPPG methods, and future methods should explicitly account for it.",
+      "affiliation": "Cameron Heights Collegiate Institute, 301 Charles St E, Kitchener, ON N2G 2P8, Canada.",
+      "publicationStatus": "epublish",
+      "language": "eng",
+      "pubModel": "Electronic-eCollection",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "fullTextUrlList": {
+        "fullTextUrl": [
+          {
+            "availability": "Subscription required",
+            "availabilityCode": "S",
+            "documentStyle": "doi",
+            "site": "DOI",
+            "url": "https://doi.org/10.1364/BOE.599752"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "html",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC13372377"
+          },
+          {
+            "availability": "Open access",
+            "availabilityCode": "OA",
+            "documentStyle": "pdf",
+            "site": "Europe_PMC",
+            "url": "https://europepmc.org/articles/PMC13372377?pdf=render"
+          }
+        ]
+      },
+      "isOpenAccess": "Y",
+      "inEPMC": "Y",
+      "inPMC": "Y",
+      "citedByCount": 1,
+      "hasReferences": "Y",
+      "hasTextMinedTerms": "Y",
+      "hasDbCrossReferences": "N",
+      "hasPDF": "Y",
+      "hasBook": "N",
+      "hasSuppl": "Y",
+      "hasLabsLinks": "N",
+      "hasData": "Y",
+      "authMan": "N",
+      "epmcAuthMan": "N",
+      "nihAuthMan": "N",
+      "hasTMAccessionNumbers": "Y",
+      "tmAccessionTypeList": {
+        "accessionType": [
+          "doi"
+        ]
+      },
+      "dateOfCompletion": "2026-07-16",
+      "dateOfCreation": "2026-07-16",
+      "dateOfRevision": "2026-08-13",
+      "electronicPublicationDate": "2026-06-24",
+      "firstPublicationDate": "2026-06-24",
+      "firstIndexDate": "2026-07-16",
+      "fullTextReceivedDate": "2026-09-03",
+      "hasEvaluations": "N"
+    }
+  ]
+}

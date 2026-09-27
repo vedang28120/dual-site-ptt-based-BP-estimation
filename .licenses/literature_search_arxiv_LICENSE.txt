@@ -1,0 +1,3 @@
+Notice: arXiv API and literature search terms.
+Users must check the terms of use at https://info.arxiv.org/help/api/index.html and verify the license of all papers retrieved by this skill for any reuse restrictions.
+Timestamp: 2026-09-27T18:36:00+05:30

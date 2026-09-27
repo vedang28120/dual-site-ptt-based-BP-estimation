@@ -1,0 +1,1573 @@
+Yes. After looking at the current literature **and your existing repository**, I would change the ideathon concept slightly: don't pitch it as “a smartphone that replaces a BP cuff.” Pitch it as a **multimodal cuffless BP screening prototype designed specifically to attack the generalization problem in rPPG-based BP estimation**.
+
+ That is a much stronger research story, and it is actually implementable.
+
+ Your existing repository already gives you a substantial starting point: facial ROI tracking, POS/CHROM/green-channel extraction, filtering, SQI validation, sliding-window inference, TFLite export, and a subject-independent validation utility.  GitHub
+
+---
+
+ # 1\. The core idea
+
+ ## Project concept
+
+ ### **PulseFusion: Smartphone Multimodal Cuffless Blood-Pressure Screening**
+
+ The phone uses **three sources of information**:
+
+```
+                 SMARTPHONE
+                     │
+       ┌─────────────┼──────────────┐
+       │             │              │
+       ▼             ▼              ▼
+   FRONT CAMERA   REAR CAMERA    IMU
+       │          + TORCH          │
+       │             │              │
+       ▼             ▼              ▼
+   Facial rPPG   Finger PPG     Hand position/
+       │             │           movement
+       └──────┬──────┘              │
+              ▼                     │
+       Cross-modal timing           │
+       + waveform morphology        │
+              │                     │
+              └──────────┬──────────┘
+                         ▼
+                MULTIMODAL AI MODEL
+                         │
+             ┌───────────┴───────────┐
+             ▼                       ▼
+          SBP / DBP             Confidence
+             │                       │
+             └───────────┬───────────┘
+                         ▼
+                BP SCREENING RESULT
+```
+
+ The central research question is:
+
+ > **Does combining two optical pulse observations with a controlled physiological perturbation improve subject-independent BP estimation compared with facial rPPG alone?**
+
+ This is important because inter-subject evaluation is substantially harder than random/intra-subject splitting; one published analysis found that performance drops under inter-subject evaluation and warned that some seemingly strong results can partly reflect subject identity rather than BP relationships.  IEEE Xplore
+
+---
+
+ # 2\. What I would change in your original abstract
+
+ There are two scientific corrections I'd make.
+
+ ### Don't say:
+
+ > “The temporal difference between these signals provides a differential pulse-arrival feature that is less dependent on cardiac timing.”
+
+ Instead:
+
+ > **“The relative timing between spatially separated optical pulse signals provides a cross-site pulse-propagation feature that captures vascular dynamics while reducing reliance on features from a single optical site.”**
+
+ Why?
+
+ Because both signals originate from the same cardiac cycle. The timing difference isn't magically independent of cardiac timing.
+
+ Also, be careful calling it **PTT**.
+
+ Strictly speaking, if you measure a facial pulse and a fingertip pulse, you are measuring a **pulse arrival/delay between two peripheral sites**, not necessarily classical arterial PTT with a known proximal reference. I'd call the feature:
+
+ **Differential Pulse Arrival Time (dPAT)**
+
+ until you establish the physiological interpretation experimentally.
+
+---
+
+ # 3\. Why the idea is scientifically interesting
+
+ There is already evidence for several individual pieces of your concept.
+
+ ### Smartphone fingertip PPG
+
+ Smartphone camera PPG has already been investigated for BP estimation. One validation study of a smartphone fingertip optical method included 91 subjects and reported mean ± SD errors of approximately 0.5 ± 7.7 mmHg for SBP and 0.4 ± 4.6 mmHg for DBP under its study protocol.  PubMed
+
+ A more recent study involving 127 participants reported smartphone PPG waveform-feature MAEs of 7.75 mmHg SBP and 6.35 mmHg DBP using regression models.  PubMed
+
+ ### Facial rPPG
+
+ Facial video has also been investigated for BP estimation. For example, one study extracted spatial pulse-wave information from facial video and used CNN modelling, reporting MAE around 5.4 mmHg for mean BP in a very small 10-person dataset.  PubMed
+
+ ### Dual-camera pulse timing
+
+ And this is particularly relevant to your idea:
+
+ A **2025 EMBC paper** specifically investigated smartphone dual-camera BP screening using PPG from the **finger and ear**, calculating inter-site PTT and combining it with HR/HRV features. The study involved only 15 participants, so it is early-stage evidence, but it demonstrates that the general direction of smartphone dual-site optical sensing is scientifically plausible.  PubMed
+
+ ### Controlled arm elevation
+
+ Even more interesting for your perturbation idea, research has shown that changing arm position changes peripheral PTT because of hydrostatic pressure effects; one study specifically investigated PTT changes during arm elevation and reported a more pronounced PTT change during elevation than lowering.  PubMed Central (PMC)
+
+ So your idea isn't:
+
+ > “Let's throw random sensors at BP.”
+
+ It can be framed as:
+
+ > **Two spatial optical observations + an experimentally controlled hydrostatic perturbation + multimodal learning.**
+
+ That's a legitimate research hypothesis.
+
+---
+
+ # 4\. The complete workflow
+
+ I would divide the system into **six stages**.
+
+ ## Stage 1 — Measurement setup
+
+ The user places the smartphone in a predefined position.
+
+ ### Front camera
+
+ Captures:
+
+```
+Face video
+   ↓
+Face detection
+   ↓
+ROI selection
+   ↓
+rPPG extraction
+   ↓
+Facial BVP waveform
+```
+
+ Use your existing pipeline here.
+
+ Your repository already contains:
+
+ - MediaPipe facial tracking
+- multiple facial patches
+- POS
+- CHROM
+- green-channel extraction
+- filtering
+- wavelet denoising
+- SQI validation
+
+ so don't rebuild this from scratch.  GitHub
+
+---
+
+ ## Stage 2 — Finger PPG
+
+ The user places a fingertip over:
+
+ **rear camera + torch**
+
+ The phone records:
+
+```
+Camera RGB frames
+       ↓
+Fingertip ROI
+       ↓
+Mean RGB intensity
+       ↓
+Green/red channel selection
+       ↓
+Bandpass filter
+       ↓
+Contact PPG
+```
+
+ For an ideathon prototype, you don't need an elaborate PPG algorithm.
+
+ Start with:
+
+```
+PPG = mean(Green_channel_ROI)
+```
+
+ Then:
+
+```
+detrend
+→ bandpass 0.7–4 Hz
+→ normalize
+→ peak detection
+```
+
+ Later compare:
+
+ - Green
+- Red
+- POS
+- CHROM
+
+ to determine which gives the best fingertip signal.
+
+---
+
+ # 5\. Stage 3 — Synchronization
+
+ This is actually one of the most important engineering problems.
+
+ You need:
+
+```
+FACE PPG
+   │
+   │ timestamp
+   ▼
+t = 0.00 ─── 0.01 ─── 0.02 ─── ...
+
+FINGER PPG
+   │
+   │ timestamp
+   ▼
+t = 0.00 ─── 0.01 ─── 0.02 ─── ...
+```
+
+ Then resample both to a common sampling frequency.
+
+ For example:
+
+ **30–60 Hz acquisition → 125 Hz internal representation**
+
+ Your existing repository already uses standardized 125-Hz processed BVP arrays and temporal resampling.  GitHub
+
+---
+
+ # 6\. Stage 4 — Differential pulse timing
+
+ Now detect individual pulse beats.
+
+ For each beat:
+
+```
+Face pulse                         Finger pulse
+
+       /\                               /\
+      /  \                             /  \
+_____/    \_____                 _____/    \_____
+     ↑                                  ↑
+  face foot                         finger foot
+
+           <------ Δt ------>
+```
+
+ Calculate:
+
+ $$
+dPAT = t_{finger}-t_{face}
+$$
+
+ Don't rely on just one beat.
+
+ Use:
+
+```
+30-second recording
+       ↓
+individual beats
+       ↓
+dPAT for each beat
+       ↓
+median dPAT
+       ↓
+dPAT variability
+```
+
+ Useful features:
+
+ - median dPAT
+- mean dPAT
+- standard deviation
+- interquartile range
+- beat-to-beat variability
+- correlation between waveforms
+- cross-correlation lag
+- normalized cross-correlation
+- pulse width
+- rise time
+- decay time
+
+---
+
+ # 7\. Stage 5 — The hydrostatic challenge
+
+ This is where your project becomes considerably more interesting.
+
+ Have the participant perform something standardized such as:
+
+ ### Protocol
+
+```
+0–20 s
+Rest / hand at heart level
+
+20–35 s
+Raise phone hand above heart level
+
+35–50 s
+Hold position
+
+50–65 s
+Return to heart level
+```
+
+ The accelerometer/IMU provides information about:
+
+ - movement
+- orientation
+- elevation transition
+- stabilization
+
+ But here's an important correction:
+
+ **Don't claim the accelerometer directly measures blood pressure.**
+
+ Instead:
+
+ > The IMU identifies the hand-position perturbation and its timing, while the optical signals measure the physiological response to that perturbation.
+
+ That's much more defensible.
+
+---
+
+ # 8\. Estimate the hydrostatic perturbation
+
+ If the vertical height difference is approximately $h$:
+
+ $$
+\Delta P \approx \rho g h
+$$
+
+ For blood:
+
+ $$
+\Delta P \approx 0.74 \times h_{\text{cm}}
+$$
+
+ approximately in mmHg.
+
+ So if the hand moves 30 cm upward:
+
+ $$
+\Delta P \approx 22 \text{ mmHg}
+$$
+
+ This doesn't mean the person's systemic BP suddenly changes by 22 mmHg.
+
+ It means the **local hydrostatic pressure at the elevated limb changes**, producing a measurable vascular response.
+
+ That distinction is extremely important in your presentation.
+
+ The physiological plausibility of using arm position as a perturbation is supported by experimental work on PTT and arm movement.  PubMed Central (PMC)
+
+---
+
+ # 9\. What features should you extract?
+
+ Don't immediately feed raw data into a giant neural network.
+
+ For an ideathon, create a **feature-rich multimodal baseline first**.
+
+ ## Facial features
+
+```
+HR
+IBI
+pulse amplitude
+pulse width
+rise time
+decay time
+systolic upstroke
+dicrotic-notch-related features
+spectral power
+signal quality
+```
+
+ ## Finger features
+
+ Same features.
+
+ ## Cross-modal features
+
+ This is where the novelty lives:
+
+```
+dPAT
+dPAT variability
+cross-correlation
+phase difference
+face/finger amplitude ratio
+HR difference
+waveform similarity
+pulse-width difference
+```
+
+ ## Perturbation features
+
+```
+baseline dPAT
+elevated dPAT
+ΔdPAT
+baseline pulse amplitude
+elevated pulse amplitude
+Δamplitude
+HR change
+recovery time
+time-to-stabilization
+```
+
+ ## IMU features
+
+```
+orientation
+vertical displacement proxy
+movement magnitude
+movement duration
+stability during hold
+acceleration variance
+```
+
+---
+
+ # 10\. The model
+
+ I would **not** start with a Transformer.
+
+ For an ideathon, you want something that:
+
+ - works
+- trains quickly
+- is explainable
+- can run on-device
+- gives you ablation results
+
+ Start with:
+
+ ### Model A — XGBoost
+
+```
+50–100 engineered features
+             ↓
+         XGBoost
+             ↓
+       SBP + DBP
+```
+
+ Then build:
+
+ ### Model B — lightweight temporal neural network
+
+```
+FACE BVP ─────── CNN ──┐
+                       │
+FINGER BVP ────── CNN ─┤
+                       │
+dPAT sequence ─── LSTM ┤
+                       │
+IMU ───────────── CNN ─┤
+                       ▼
+                 Fusion Layer
+                       │
+                 Dense Layer
+                  /         \
+                 /           \
+               SBP           DBP
+```
+
+ This is essentially a **late-fusion multimodal network**.
+
+---
+
+ # 11\. Even better: uncertainty-aware output
+
+ I think this could be one of your best demo features.
+
+ Instead of:
+
+ > **BP = 132/86**
+
+ produce:
+
+ > **Estimated BP: 132/86 mmHg**\
+>  **Confidence: 82%**\
+>  **Signal quality: Good**
+
+ And if the user moves:
+
+ > **Measurement unreliable**\
+>  Please hold your phone steady and repeat.
+
+ This is important because current cuffless-BP research still has significant concerns around accuracy, calibration, generalization, and real-world reliability. Recent reviews explicitly emphasize these limitations.  PubMed+1
+
+ Your existing repository already has an uncertainty-aware modelling direction and SQI infrastructure, which gives you a natural place to extend it.  GitHub
+
+---
+
+ # 12\. The most important experiment
+
+ Your project should **not** simply report:
+
+ > "Our model gets X mmHg MAE."
+
+ The central experiment should be:
+
+ ### Does multimodality improve generalization?
+
+ Run:
+
+```
+                     Test subjects
+                           │
+             ┌─────────────┴─────────────┐
+             │                           │
+       Existing model             New model
+       Face rPPG only             Multimodal
+             │                           │
+             ▼                           ▼
+          SBP/DBP                    SBP/DBP
+```
+
+ Then compare.
+
+---
+
+ # 13\. Your ablation study
+
+ This is potentially your strongest ideathon slide.
+
+ | Model | Face | Finger | dPAT | IMU/perturbation |
+| --- | --- | --- | --- | --- |
+| Baseline | ✓ |  |  |  |
+| M1 | ✓ | ✓ |  |  |
+| M2 | ✓ | ✓ | ✓ |  |
+| M3 | ✓ | ✓ | ✓ | ✓ |
+
+The hypothesis is:
+
+```
+Face only
+     ↓
+Face + Finger
+     ↓
+Face + Finger + dPAT
+     ↓
+Face + Finger + dPAT + perturbation
+```
+
+ You don't have to promise that every additional modality improves performance.
+
+ In fact, **showing that some modalities don't help** can make the research more credible.
+
+---
+
+ # 14\. Dataset strategy
+
+ This is where I would be pragmatic.
+
+ You have three possible data sources.
+
+ ## Option A — Existing datasets
+
+ Use public datasets to pretrain the signal/model components.
+
+ For example, MIMIC-BP provides synchronized biomedical signals including ABP, PPG and ECG from 1,524 subjects, with 30-second segments.  Nature
+
+ But:
+
+ **MIMIC-BP doesn't give you smartphone facial video + fingertip smartphone PPG + IMU.**
+
+ So don't pretend it solves the entire problem.
+
+ Use public data for:
+
+```
+PPG representation learning
+BP regression pretraining
+signal processing validation
+```
+
+ Then collect your own multimodal dataset.
+
+---
+
+ # 15\. Your own dataset
+
+ For an ideathon prototype, even:
+
+ **20–30 people × 5–10 trials**
+
+ can be enough to demonstrate the pipeline.
+
+ But call it a:
+
+ > **pilot feasibility study**
+
+ not a clinical validation.
+
+ Each trial should contain:
+
+```
+Participant ID
+Trial ID
+Timestamp
+
+Face video
+Finger camera video
+IMU
+Reference SBP
+Reference DBP
+Body position
+Hand elevation
+Signal-quality metadata
+```
+
+---
+
+ # 16\. Reference BP measurement
+
+ This is non-negotiable.
+
+ You need a reference cuff measurement during data collection.
+
+ A good trial could be:
+
+```
+REST
+ ↓
+reference BP
+ ↓
+30 sec smartphone measurement
+ ↓
+reference BP
+ ↓
+hand elevation
+ ↓
+30 sec smartphone measurement
+ ↓
+reference BP
+```
+
+ You can then associate the optical/IMU signals with the nearest reference measurement according to a predefined protocol.
+
+ Do not train the model on labels copied from a previous participant measurement.
+
+---
+
+ # 17\. Subject-independent split
+
+ This is **critical**.
+
+ Never do:
+
+```
+Person A trial 1 → train
+Person A trial 2 → test
+```
+
+ because the model can learn that person's physiology.
+
+ Instead:
+
+```
+Person A ─┐
+Person B  │
+Person C  ├── TRAIN
+Person D  │
+Person E ─┘
+
+Person F ─┐
+Person G  ├── VALIDATION
+Person H ─┘
+
+Person I ─┐
+Person J  ├── TEST
+Person K ─┘
+```
+
+ Ideally use:
+
+ **GroupKFold / Leave-One-Subject-Out**
+
+ This directly addresses the generalization concern raised in the literature.  IEEE Xplore
+
+---
+
+ # 18\. Evaluation metrics
+
+ Don't report only correlation.
+
+ Report:
+
+ ### Regression
+
+ - MAE
+- RMSE
+- Pearson $r$
+- mean error/bias
+- standard deviation of error
+
+ ### Agreement
+
+ **Bland–Altman analysis**
+
+ Your existing repository already contains a Bland–Altman validator.  GitHub
+
+ ### Generalization
+
+ Report separately:
+
+```
+Random split
+vs
+Subject-independent split
+```
+
+ That comparison itself can be a powerful result.
+
+---
+
+ # 19\. Don't claim clinical validation
+
+ This is important for your pitch.
+
+ Current cuffless-BP guidance emphasizes that these devices require specialized validation, including aspects such as position/hydrostatic effects, exercise, treatment response, and recalibration stability.  PubMed+1
+
+ The AHA's recent scientific statement likewise emphasizes that cuffless devices remain insufficiently vetted for broad clinical use and that important validation gaps remain.  PubMed
+
+ So your prototype should say:
+
+ > **“Research prototype for BP screening and feasibility evaluation.”**
+
+ Not:
+
+ > “Medical-grade BP measurement.”
+
+---
+
+ # 20\. The actual mobile application
+
+ Here's how I'd make the demo look.
+
+ ## Screen 1 — Start
+
+```
+┌───────────────────────────┐
+│       PulseFusion         │
+│                           │
+│  Cuffless BP Screening    │
+│                           │
+│     [ Start Test ]        │
+│                           │
+│  Keep your phone steady   │
+└───────────────────────────┘
+```
+
+---
+
+ ## Screen 2 — Face measurement
+
+```
+┌───────────────────────────┐
+│                           │
+│        CAMERA             │
+│       ┌─────┐             │
+│       │ FACE│             │
+│       └─────┘             │
+│                           │
+│  ● Signal quality: Good   │
+│                           │
+│  Measuring... 12 sec      │
+└───────────────────────────┘
+```
+
+---
+
+ ## Screen 3 — Finger
+
+```
+┌───────────────────────────┐
+│   Place finger on camera  │
+│                           │
+│          ☝                │
+│                           │
+│  Finger PPG: ████████     │
+│  Quality: Excellent       │
+│                           │
+│  15 seconds               │
+└───────────────────────────┘
+```
+
+---
+
+ ## Screen 4 — Perturbation
+
+ This is your distinctive demo.
+
+```
+┌───────────────────────────┐
+│     PHYSIOLOGICAL TEST    │
+│                           │
+│  Keep phone at heart      │
+│  level                    │
+│                           │
+│        ↓                  │
+│                           │
+│  Raise your hand          │
+│  above your heart         │
+│                           │
+│  Hold...                  │
+└───────────────────────────┘
+```
+
+ IMU determines whether the movement was actually performed correctly.
+
+---
+
+ # 21\. Signal dashboard
+
+ For the judges, have a hidden/developer screen.
+
+ Show:
+
+```
+FACE rPPG       ███████████████  0.91 SQI
+
+FINGER PPG      ███████████████  0.95 SQI
+
+CROSS-CORR      █████████████    0.87
+
+dPAT            82 ms
+
+dPAT Δ          +11 ms
+
+IMU QUALITY     ███████████████  0.94
+```
+
+ Then:
+
+```
+                 ↓
+           MULTIMODAL MODEL
+                 ↓
+
+       SBP             DBP
+      128             81
+     mmHg            mmHg
+
+     Confidence: 84%
+```
+
+ That will make the prototype feel like an actual research instrument rather than an AI demo.
+
+---
+
+ # 22\. Engineering architecture
+
+ I'd organize the new repository like this:
+
+```
+pulsefusion/
+│
+├── acquisition/
+│   ├── face_camera.py
+│   ├── finger_camera.py
+│   ├── imu.py
+│   └── synchronizer.py
+│
+├── signals/
+│   ├── face_rppg.py
+│   ├── finger_ppg.py
+│   ├── filtering.py
+│   ├── beat_detection.py
+│   ├── alignment.py
+│   └── signal_quality.py
+│
+├── features/
+│   ├── morphology.py
+│   ├── heart_rate.py
+│   ├── dpat.py
+│   ├── perturbation.py
+│   └── imu_features.py
+│
+├── models/
+│   ├── baseline_face.py
+│   ├── xgboost_fusion.py
+│   ├── temporal_fusion.py
+│   └── uncertainty.py
+│
+├── training/
+│   ├── dataset.py
+│   ├── group_split.py
+│   ├── train.py
+│   └── ablation.py
+│
+├── validation/
+│   ├── metrics.py
+│   ├── bland_altman.py
+│   └── subject_independent.py
+│
+├── mobile/
+│   └── android/
+│
+└── dashboard/
+    └── prototype/
+```
+
+ And I'd **reuse your existing repository rather than start over**. Your repo already has much of the necessary signal-processing and mobile architecture.  GitHub
+
+ Your existing rPPG-to-BP repository
+
+---
+
+ # 23\. The biggest technical risk: simultaneous cameras
+
+ This needs to be addressed early.
+
+ Your concept assumes:
+
+ > front camera + rear camera simultaneously
+
+ But **Android hardware doesn't guarantee simultaneous front/rear camera streaming on every phone**.
+
+ Therefore build two modes.
+
+ ### Mode A — true multimodal
+
+ If the device supports concurrent cameras:
+
+```
+Front camera ──────┐
+                    ├── synchronized
+Rear camera ───────┤
+                    │
+IMU ───────────────┘
+```
+
+ ### Mode B — prototype fallback
+
+ If it doesn't:
+
+```
+Phase 1:
+Face recording
+
+Phase 2:
+Finger recording
+
+Phase 3:
+IMU perturbation
+```
+
+ Then align recordings using timestamps / synchronization events.
+
+ For the ideathon, I'd actually support **both**.
+
+ That prevents one Android hardware limitation from killing the entire demo.
+
+---
+
+ # 24\. Another important issue: face-to-finger timing
+
+ Your two signals don't need perfect sample-by-sample synchronization.
+
+ You're interested in pulse timing on the order of tens to hundreds of milliseconds.
+
+ Therefore:
+
+```
+timestamp synchronization
++
+cross-correlation
++
+beat-level alignment
+```
+
+ is sufficient for your first prototype.
+
+ You can calculate:
+
+ $$
+\tau^* = \arg\max_\tau Corr(P_{face}(t),P_{finger}(t+\tau))
+$$
+
+ Then:
+
+ $$
+dPAT = \tau^*
+$$
+
+ This is actually a nice mathematical element to put on your poster.
+
+---
+
+ # 25\. Prototype ML pipeline
+
+ I'd implement the first version like this.
+
+ ### Step 1
+
+ Extract:
+
+```
+face_ppg
+finger_ppg
+imu
+```
+
+ ### Step 2
+
+ Normalize each:
+
+```
+x = (x - mean(x)) / std(x)
+```
+
+ ### Step 3
+
+ Extract:
+
+```
+face_features
+finger_features
+cross_features
+imu_features
+```
+
+ ### Step 4
+
+ Concatenate:
+
+```
+X = [
+    face_features,
+    finger_features,
+    cross_features,
+    imu_features
+]
+```
+
+ ### Step 5
+
+ Train:
+
+```
+model_sbp = XGBRegressor(...)
+model_dbp = XGBRegressor(...)
+```
+
+ ### Step 6
+
+ Then upgrade to:
+
+```
+CNN(face waveform)
+        │
+CNN(finger waveform)
+        │
+LSTM(dPAT)
+        │
+MLP(IMU)
+        │
+       concat
+        │
+     attention
+        │
+    SBP / DBP
+```
+
+---
+
+ # 26\. The smartest ideathon strategy
+
+ Don't try to finish everything.
+
+ I'd divide your implementation into **three levels**.
+
+ ## Level 1 — MUST HAVE
+
+```
+✓ Face rPPG
+✓ Finger PPG
+✓ IMU
+✓ Signal synchronization
+✓ dPAT
+✓ Basic feature extraction
+✓ XGBoost BP prediction
+✓ Android interface
+✓ Reference cuff comparison
+```
+
+ That is your minimum viable research prototype.
+
+---
+
+ ## Level 2 — HIGH VALUE
+
+```
+✓ Subject-independent evaluation
+✓ Ablation experiments
+✓ Signal-quality detection
+✓ Hand elevation detection
+✓ Confidence score
+✓ Bland-Altman plots
+✓ On-device inference
+```
+
+ This is what turns the project from a hackathon app into an **ideathon research project**.
+
+---
+
+ ## Level 3 — WOW FACTOR
+
+```
+✓ Temporal multimodal neural network
+✓ TFLite INT8
+✓ uncertainty estimation
+✓ live waveform dashboard
+✓ adaptive quality gating
+✓ personalized longitudinal trends
+```
+
+ Don't start here.
+
+---
+
+ # 27\. A realistic 48-hour ideathon plan
+
+ ## Hours 0–4 — Architecture
+
+ Finalize:
+
+```
+data protocol
+sensor protocol
+feature definitions
+model inputs
+```
+
+ Fork your existing project architecture.
+
+---
+
+ ## Hours 4–10 — Finger PPG
+
+ Implement:
+
+```
+rear camera
++
+torch
++
+finger ROI
++
+PPG extraction
++
+filtering
++
+peak detection
+```
+
+ Test against your own pulse.
+
+---
+
+ ## Hours 10–16 — IMU
+
+ Implement:
+
+```
+accelerometer
+gyroscope
+orientation
+movement detection
+```
+
+ Create:
+
+```
+REST
+↓
+raise
+↓
+hold
+↓
+lower
+```
+
+ state machine.
+
+---
+
+ ## Hours 16–22 — Synchronization
+
+ Implement:
+
+```
+face timestamp
+finger timestamp
+IMU timestamp
+```
+
+ and common timeline.
+
+---
+
+ ## Hours 22–28 — dPAT
+
+ Implement:
+
+```
+cross-correlation
+beat detection
+pulse alignment
+dPAT
+```
+
+ Generate plots.
+
+---
+
+ ## Hours 28–34 — Dataset
+
+ Collect pilot data.
+
+ For example:
+
+```
+10–20 subjects
+×
+multiple trials
+×
+multiple positions
+```
+
+ The goal isn't statistical validation.
+
+ The goal is:
+
+ > demonstrate that the entire measurement chain works.
+
+---
+
+ ## Hours 34–40 — Model
+
+ Train:
+
+```
+Baseline:
+Face only
+
+Model 1:
+Face + Finger
+
+Model 2:
+Face + Finger + dPAT
+
+Model 3:
+Face + Finger + dPAT + IMU
+```
+
+---
+
+ ## Hours 40–44 — Evaluation
+
+ Generate:
+
+```
+MAE
+RMSE
+correlation
+Bland-Altman
+subject-independent results
+ablation table
+```
+
+---
+
+ ## Hours 44–48 — Demo
+
+ Build:
+
+```
+Start
+ ↓
+Face scan
+ ↓
+Finger scan
+ ↓
+Raise phone
+ ↓
+AI processing
+ ↓
+BP result
+ ↓
+Confidence
+ ↓
+Waveform visualization
+```
+
+ And prepare the pitch.
+
+---
+
+ # 28\. Your poster should have one killer diagram
+
+ I'd make the central graphic:
+
+```
+             ┌─────────────────────┐
+             │      SMARTPHONE     │
+             └──────────┬──────────┘
+                        │
+       ┌────────────────┼─────────────────┐
+       │                │                 │
+       ▼                ▼                 ▼
+    FACE             FINGER             IMU
+    rPPG               PPG           POSITION
+       │                │                 │
+       └────────┬───────┘                 │
+                ▼                         ▼
+          CROSS-SITE                 HYDROSTATIC
+          PULSE DELAY                PERTURBATION
+                │                         │
+                └────────────┬────────────┘
+                             ▼
+                    MULTIMODAL AI
+                             │
+                    ┌────────┴────────┐
+                    ▼                 ▼
+                  SBP/DBP         CONFIDENCE
+```
+
+ Underneath:
+
+ > **One phone. Multiple physiological views. Subject-independent BP screening.**
+
+---
+
+ # 29\. What is genuinely novel here?
+
+ Be careful with the novelty claim.
+
+ **Don't say:**
+
+ > “Nobody has used smartphones for cuffless BP.”
+
+ Clearly they have.
+
+ **Don't say:**
+
+ > “Nobody has used two cameras.”
+
+ There is already 2025 work on smartphone dual-camera PPG for BP screening.  PubMed
+
+ Instead claim:
+
+ > **“We investigate whether combining facial rPPG, fingertip PPG, cross-site pulse timing, and an IMU-identified hydrostatic perturbation can improve subject-independent cuffless BP estimation compared with a facial-rPPG baseline.”**
+
+ That's a much more defensible novelty statement.
+
+ The novelty is in the **combination, experimental question, and generalization-focused evaluation**, rather than any single sensor.
+
+---
+
+ # 30\. Your pitch narrative
+
+ Here's the story I'd tell the judges:
+
+ ### Problem
+
+ > Blood pressure is one of the most frequently measured cardiovascular parameters, but conventional measurement requires a cuff. Smartphone camera methods are attractive, but models based on a single facial rPPG signal can be sensitive to person-specific vascular characteristics, motion, lighting and signal quality.
+
+ Current literature supports the general concern that cuffless BP methods face substantial challenges around calibration, validation and generalization.  PubMed+1
+
+ ### Existing work
+
+ > We previously developed a smartphone facial-rPPG-to-BP system.
+
+ Your existing repository demonstrates that foundation, including mobile acquisition, rPPG extraction, filtering, quality checks and BP inference.  GitHub
+
+ ### Limitation
+
+ > A single facial optical waveform gives us only one view of the cardiovascular pulse.
+
+ ### Our hypothesis
+
+ > What if the smartphone observes the pulse from two locations and deliberately perturbs the vascular system?
+
+ ### Solution
+
+ > We combine facial rPPG, fingertip PPG, cross-site pulse timing and IMU-guided hand elevation with a multimodal AI model.
+
+ ### Research question
+
+ > Can these additional physiological observations improve generalization to people the model has never seen?
+
+ ### Demo
+
+ > Put the phone in front of your face. Place your finger on the rear camera. Raise your hand when prompted. The phone measures multiple physiological signals and produces a BP estimate together with a signal-quality/confidence indicator.
+
+ ### Impact
+
+ > We are not claiming to replace a clinical cuff. We are building and experimentally evaluating a pathway toward accessible smartphone-based BP screening.
+
+ That final sentence is important.
+
+---
+
+ # 31\. The strongest version of the project
+
+ If I were building this with you, I'd actually give it this structure:
+
+ ## **PulseFusion**
+
+ ### **Input**
+
+ $$
+\{V_{face}, V_{finger}, IMU\}
+$$
+
+ ### **Extract**
+
+ $$
+\{BVP_f,BVP_{finger},dPAT, morphology, HR, IMU\}
+$$
+
+ ### **Perturb**
+
+ $$
+\text{controlled hand elevation}
+$$
+
+ ### **Fuse**
+
+ $$
+Z = f(BVP_f,BVP_{finger},dPAT,IMU)
+$$
+
+ ### **Predict**
+
+ $$
+\hat{y}=[\hat{SBP},\hat{DBP}]
+$$
+
+ ### **Estimate reliability**
+
+ $$
+C = g(SQI_{face},SQI_{finger},motion,dPAT\ stability)
+$$
+
+ ### **Evaluate**
+
+ $$
+\text{Subject-independent MAE/RMSE/Bland-Altman}
+$$
+
+ That is a coherent research system rather than a collection of features.
+
+---
+
+ # 32\. One thing I would explicitly put on the slide
+
+ ### **What happens if the AI is wrong?**
+
+ Most student projects ignore this.
+
+ Your system should answer:
+
+```
+Good signals
+     ↓
+BP estimate
+     +
+confidence
+
+Bad signals
+     ↓
+NO RELIABLE ESTIMATE
+     ↓
+"Please repeat measurement"
+```
+
+ That makes the project much more mature.
+
+ It also aligns with the broader cuffless-BP literature, where reliability, calibration stability and validation remain major unresolved issues.  PubMed+1
+
+---
+
+ # 33\. Final architecture I'd actually build
+
+```
+                     ┌─────────────────┐
+                     │    ANDROID APP  │
+                     └────────┬────────┘
+                              │
+            ┌─────────────────┼─────────────────┐
+            │                 │                 │
+            ▼                 ▼                 ▼
+       FRONT CAMERA      REAR CAMERA          IMU
+            │            + TORCH                │
+            ▼                 │                 ▼
+        FACE ROI              ▼             Orientation
+            │             FINGER ROI        Movement
+            ▼                 │             Elevation
+         rPPG                 ▼                 │
+            │               PPG                 │
+            └────────────┬────┘                 │
+                         ▼                      │
+                    Synchronizer ◄─────────────┘
+                         │
+             ┌───────────┼───────────┐
+             ▼           ▼           ▼
+          Face BVP    Finger PPG    IMU
+             │           │           │
+             ▼           ▼           ▼
+        Morphology   Morphology   Perturbation
+             │           │           │
+             └──────┬────┴─────┬─────┘
+                    ▼          ▼
+                  dPAT       Δresponse
+                    │          │
+                    └────┬─────┘
+                         ▼
+                Multimodal Fusion
+                         │
+                  ┌──────┴──────┐
+                  ▼             ▼
+                 SBP           DBP
+                  │             │
+                  └──────┬──────┘
+                         ▼
+                   Confidence
+                         │
+              ┌──────────┴──────────┐
+              ▼                     ▼
+          BP screening         Signal quality
+```
+
+ ### And the experimental comparison:
+
+```
+                    SUBJECT-INDEPENDENT TEST
+                              │
+          ┌───────────────────┴───────────────────┐
+          │                                       │
+          ▼                                       ▼
+    YOUR OLD MODEL                         PULSEFUSION
+     Face rPPG                              Multimodal
+          │                                       │
+          ▼                                       ▼
+       SBP/DBP                                  SBP/DBP
+          │                                       │
+          └───────────────────┬───────────────────┘
+                              ▼
+                     Compare generalization
+```
+
+ **That comparison is the heart of your ideathon.**
+
+ One final strategic point: the literature is already moving toward multimodal sensing and stricter validation, while recent reviews continue to caution that cuffless BP estimates are not yet equivalent to conventional clinical measurements.  PubMed+1  So your strongest claim is not _“we solved cuffless BP.”_ It is _“we built a new sensing and modelling strategy and experimentally test whether additional physiological information makes smartphone BP estimation more generalizable.”_
+
+ If you have **48 hours**, I would prioritize **Face + Finger + dPAT + IMU + XGBoost + subject-independent ablation + polished Android demo** over trying to train a sophisticated Transformer. That gives you a much better chance of having a complete, defensible prototype rather than an impressive model that cannot be demonstrated end-to-end.

@@ -1,0 +1,56 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# Data and large weights
+data/
+*.mat
+*.h5
+*.hdf5
+*.parquet
+*.tar.gz
+*.zip
+*.bin
+
+# Model artifacts (keep checkpoints directory)
+checkpoints/*.pt
+checkpoints/*.onnx
+checkpoints/*.tflite
+!checkpoints/.gitkeep
+
+# IDEs & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# GCP credentials & tokens
+*credentials*.json
+*service_account*.json
+client_secret*.json
+.gcloud/
