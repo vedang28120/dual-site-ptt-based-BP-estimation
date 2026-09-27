@@ -206,49 +206,67 @@ class DualStreamTCN(nn.Module):
       - sbp_pred: [B, 1] (Predicted Systolic Blood Pressure in mmHg)
       - dbp_pred: [B, 1] (Predicted Diastolic Blood Pressure in mmHg)
     """
-    def __init__(self) -> None:
+    def __init__(self, model_tier: str = "compact") -> None:
         super().__init__()
+        self.model_tier = model_tier.lower()
+
+        if self.model_tier == "pro":
+            # Tier 2: Pro Deep Architecture (2.47M parameters)
+            # Receptive Field: 505 samples (~16.8 seconds at 30 Hz)
+            # Multi-Head Causal Cross-Attention: 8 heads
+            ch_a = 160
+            ch_b = 112
+            dilations = [1, 2, 4, 8, 16, 32]
+            n_heads = 8
+            anchor_dim = 64
+            head_hidden = 128
+        else:
+            # Tier 1: Ultra-Lite Compact Architecture (230k parameters)
+            # Receptive Field: 61 samples (~2.03 seconds at 30 Hz)
+            # Multi-Head Causal Cross-Attention: 4 heads
+            ch_a = 64
+            ch_b = 32
+            dilations = [1, 2, 4, 8]
+            n_heads = 4
+            anchor_dim = 32
+            head_hidden = 48
 
         # Stream A (Finger Contact PPG - Morphology, High SNR)
-        self.in_conv_a = CausalConv1d(1, 64, kernel_size=5, dilation=1)
+        self.in_conv_a = CausalConv1d(1, ch_a, kernel_size=5, dilation=1)
         self.tcn_a_blocks = nn.ModuleList([
-            DilatedCausalBlock(64, kernel_size=5, dilation=1),
-            DilatedCausalBlock(64, kernel_size=5, dilation=2),
-            DilatedCausalBlock(64, kernel_size=5, dilation=4),
-            DilatedCausalBlock(64, kernel_size=5, dilation=8),
+            DilatedCausalBlock(ch_a, kernel_size=5, dilation=d)
+            for d in dilations
         ])
 
         # Stream B (Face rPPG - Macro-Foot Timing, POS filtered)
-        self.in_conv_b = CausalConv1d(1, 32, kernel_size=5, dilation=1)
+        self.in_conv_b = CausalConv1d(1, ch_b, kernel_size=5, dilation=1)
         self.tcn_b_blocks = nn.ModuleList([
-            DilatedCausalBlock(32, kernel_size=5, dilation=1),
-            DilatedCausalBlock(32, kernel_size=5, dilation=2),
-            DilatedCausalBlock(32, kernel_size=5, dilation=4),
-            DilatedCausalBlock(32, kernel_size=5, dilation=8),
+            DilatedCausalBlock(ch_b, kernel_size=5, dilation=d)
+            for d in dilations
         ])
 
         # Causal Cross-Attention Kernel
-        self.cross_attn = CausalCrossAttention(query_dim=64, key_dim=32, num_heads=4)
+        self.cross_attn = CausalCrossAttention(query_dim=ch_a, key_dim=ch_b, num_heads=n_heads)
 
         # HRVP Physiological Anchor MLP (Ingests [ePWV, dPTT, dP_hydro, compliance, E0, alpha])
         self.anchor_mlp = nn.Sequential(
-            nn.Linear(6, 32),
+            nn.Linear(6, anchor_dim),
             nn.GELU(),
-            nn.Linear(32, 32),
+            nn.Linear(anchor_dim, anchor_dim),
             nn.GELU(),
         )
 
         # Decoupled SBP and DBP heads
-        # Bottleneck: 64 (pooled optical context) + 32 (anchor) = 96
+        bottleneck_dim = ch_a + anchor_dim
         self.sbp_head = nn.Sequential(
-            nn.Linear(96, 48),
+            nn.Linear(bottleneck_dim, head_hidden),
             nn.GELU(),
-            nn.Linear(48, 1),
+            nn.Linear(head_hidden, 1),
         )
         self.dbp_head = nn.Sequential(
-            nn.Linear(96, 48),
+            nn.Linear(bottleneck_dim, head_hidden),
             nn.GELU(),
-            nn.Linear(48, 1),
+            nn.Linear(head_hidden, 1),
         )
 
     def forward(
