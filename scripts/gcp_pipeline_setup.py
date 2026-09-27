@@ -109,7 +109,7 @@ def print_compute_instructions():
     print("\n" + "=" * 65)
     print("3. Cloud Model Training Deployment Guide")
     print("=" * 65)
-    print("To train using your free trial credits (₹28,664 available):")
+    print("To train using your free trial credits (INR 28,664 available):")
     print("\nOption 1: Launch Compute Engine GPU VM (1x NVIDIA Tesla T4)")
     print(f"""
 gcloud compute instances create bp-training-vm \\
