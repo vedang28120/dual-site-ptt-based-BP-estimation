@@ -59,6 +59,7 @@ def parse_args():
     parser.add_argument("--no-amp", action="store_true", help="Disable Automatic Mixed Precision (AMP)")
     parser.add_argument("--no-augment", action="store_true", help="Disable waveform augmentations")
     parser.add_argument("--output-dir", type=str, default="./checkpoints", help="Output directory for checkpoints")
+    parser.add_argument("--model-tier", type=str, default="pro", choices=["compact", "pro"], help="Model capacity tier (compact: 230k, pro: 2.47M params)")
     parser.add_argument("--gcs-bucket", type=str, default="dual-site-bp-datasets-9c88cfa3", help="GCS bucket name")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility")
     return parser.parse_args()
@@ -133,11 +134,12 @@ def main():
     )
 
     # 2. Model Architecture
-    print("\n[STEP 2/5] Initializing Anti-Collapse DualStreamTCN...")
-    model = DualStreamTCN().to(device)
+    print(f"\n[STEP 2/5] Initializing Anti-Collapse DualStreamTCN (Tier: {args.model_tier.upper()})...")
+    model = DualStreamTCN(model_tier=args.model_tier).to(device)
     param_count = model.count_parameters()
-    print(f"[MODEL] Total Parameters: {param_count:,} (Snapdragon 4 Gen 2 budget: <250,000)")
-    assert param_count < 250_000, "Model parameters exceed mobile edge budget!"
+    param_limit = 5_000_000 if args.model_tier == "pro" else 250_000
+    print(f"[MODEL] Total Parameters: {param_count:,} (Selected Tier Limit: < {param_limit:,})")
+    assert param_count < param_limit, f"Model parameters ({param_count:,}) exceed budget ({param_limit:,})!"
 
     # 3. Loss, Optimizer, and Learning Rate Scheduler
     loss_fn = TripartiteCompoundLoss(delta=1.0, lambda_1=0.40, lambda_2=0.25).to(device)
