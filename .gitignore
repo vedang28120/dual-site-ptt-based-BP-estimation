@@ -1,12 +1,10 @@
-# Python bytecode and caches
+# Python bytecode, environments & caches
 __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Environments
 .venv/
 env/
 venv/
@@ -35,22 +33,64 @@ data/
 *.zip
 *.bin
 
-# Model artifacts (keep checkpoints directory)
+# Model checkpoints & large binary models (>50MB)
+*.onnx
+*.pt
+*.pth
 checkpoints/*.pt
 checkpoints/*.onnx
 checkpoints/*.tflite
+checkpoints/*.npz
 !checkpoints/.gitkeep
+!checkpoints/*.json
 
-# IDEs & OS
+# Android / Gradle build outputs
+*.apk
+*.aab
+backups/
+.gradle/
+**/.gradle/
+**/build/
+.kotlin/
+**/.kotlin/
+*.iml
+**/*.iml
+local.properties
+**/local.properties
+.externalNativeBuild/
+**/.externalNativeBuild/
+.cxx/
+**/.cxx/
+captures/
+**/captures/
+
+# Credentials, tokens, private keys
+Tokens and keys.txt
+*token*
+*credentials*.json
+*service_account*.json
+client_secret*.json
+*.keystore
+*.jks
+*.pem
+*.key
+.gcloud/
+
+# Ephemeral test captures, debug dumps, and screenshots
+screenshot_*.png
+screen_pulsefusion*.png
+crop_connect.png
+tmp_*.json
+tmp*.json
+*results*.json
+test_results_summary.json
+
+# IDEs, agents & OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 *.swp
 *.swo
-
-# GCP credentials & tokens
-*credentials*.json
-*service_account*.json
-client_secret*.json
-.gcloud/
+.agents/
+.licenses/

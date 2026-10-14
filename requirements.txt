@@ -1,0 +1,17 @@
+# Core numerical and scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+PyWavelets>=1.4.0
+h5py>=3.8.0
+
+# Deep learning and neural representations
+torch>=2.0.0
+onnx>=1.14.0
+onnxruntime>=1.15.0
+
+# Clinical physiological dataset readers
+vitaldb>=1.4.0
+wfdb>=4.1.0
+
+# Testing and verification
+pytest>=7.4.0

@@ -210,3 +210,82 @@ class NumpyTripartiteLoss:
 
 # Aliased for backward compatibility with E2E references
 ReferenceTripartiteLoss = NumpyTripartiteLoss
+
+
+class MultiTaskDistillationLoss(nn.Module):
+    """
+    Implements L_total = lambda1*L_MSE + lambda2*L_Huber + lambda3*L_KD
+                         + lambda4*L_FeatureHint + lambda5*L_PhysioConsistency
+    """
+
+    def __init__(
+        self,
+        lambdas: Tuple[float, float, float, float, float] = (0.35, 0.35, 0.15, 0.10, 0.05),
+        huber_delta: float = 5.0,
+    ):
+        super().__init__()
+        self.l1, self.l2, self.l3, self.l4, self.l5 = lambdas
+        self.huber_delta = huber_delta
+
+    def forward(
+        self,
+        student_out: Dict[str, torch.Tensor],
+        teacher_out: Optional[Dict[str, torch.Tensor]],
+        bp_target: torch.Tensor,
+        physio_14d: torch.Tensor,
+    ) -> Tuple[torch.Tensor, Dict[str, float]]:
+        y_s = student_out["bp_pred"]  # [SBP, DBP, MAP]
+        l_mse = F.mse_loss(y_s, bp_target)
+        l_huber = F.huber_loss(y_s, bp_target, delta=self.huber_delta)
+
+        if teacher_out is not None:
+            y_t = teacher_out["bp_pred"].detach()
+            h_t = teacher_out["latent"].detach()
+            h_s = student_out.get("latent_proj", student_out.get("latent"))
+            l_kd = F.mse_loss(y_s / 2.0, y_t / 2.0)
+            if h_s is not None and h_t is not None:
+                cos_loss = 1.0 - F.cosine_similarity(h_s, h_t, dim=-1).mean()
+                l_hint = cos_loss + F.mse_loss(
+                    F.layer_norm(h_s, (h_s.shape[-1],)), F.layer_norm(h_t, (h_t.shape[-1],))
+                )
+            else:
+                l_hint = torch.tensor(0.0, device=y_s.device)
+        else:
+            l_kd = torch.tensor(0.0, device=y_s.device)
+            l_hint = torch.tensor(0.0, device=y_s.device)
+
+        # Physics Consistency Loss (Hemodynamic Identity + Moens-Korteweg PWV-BP)
+        sbp_hat, dbp_hat, map_hat = y_s[:, 0], y_s[:, 1], y_s[:, 2]
+        epwv = torch.clamp(physio_14d[:, 2], min=3.0, max=18.0)
+        hydro_offset = physio_14d[:, 3]
+        hr_bpm = physio_14d[:, 4]
+
+        form_factor = 0.333 + 0.0012 * (hr_bpm - 70.0)
+        map_rule = dbp_hat + form_factor * (sbp_hat - dbp_hat)
+        pp_violation = F.relu(20.0 - (sbp_hat - dbp_hat))
+
+        mk_params = student_out.get("mk_params")
+        if mk_params is not None:
+            alpha_0, alpha_1 = mk_params[:, 0], mk_params[:, 1]
+            map_mk = alpha_0 + alpha_1 * torch.log(epwv) + hydro_offset
+            l_physio = torch.mean((map_hat - map_rule) ** 2 + pp_violation ** 2 + 0.5 * (map_hat - map_mk) ** 2)
+        else:
+            l_physio = torch.mean((map_hat - map_rule) ** 2 + pp_violation ** 2)
+
+        total_loss = (
+            self.l1 * l_mse
+            + self.l2 * l_huber
+            + self.l3 * l_kd
+            + self.l4 * l_hint
+            + self.l5 * l_physio
+        )
+        metrics = {
+            "L_total": float(total_loss.item()),
+            "L_MSE": float(l_mse.item()),
+            "L_Huber": float(l_huber.item()),
+            "L_KD": float(l_kd.item()),
+            "L_Hint": float(l_hint.item()),
+            "L_Physio": float(l_physio.item()),
+        }
+        return total_loss, metrics
+

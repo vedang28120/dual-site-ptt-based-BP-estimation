@@ -39,6 +39,7 @@ from src.optical.time_grid_synchronizer import (
     SynchronizationResult,
     compute_timestamp_jitter,
 )
+from src.optical.phase_preserving_filter import NonDestructiveSignalPipeline
 
 __all__ = [
     "CameraStreamConfig",
@@ -61,4 +62,6 @@ __all__ = [
     "TimeGridSynchronizer",
     "SynchronizationResult",
     "compute_timestamp_jitter",
+    "NonDestructiveSignalPipeline",
 ]
+

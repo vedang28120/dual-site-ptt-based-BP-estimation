@@ -1,0 +1,39 @@
+{
+  "cohort_size": 120,
+  "total_segments": 685,
+  "unseen_test_subjects": 19,
+  "unseen_test_segments": 100,
+  "sbp_mae": 3.74,
+  "dbp_mae": 3.15,
+  "sbp_rmse": 4.5,
+  "dbp_rmse": 3.63,
+  "sbp_bias": -0.12,
+  "dbp_bias": 0.08,
+  "sbp_sd": 4.5,
+  "dbp_sd": 3.63,
+  "sbp_pearson_r": 0.9829,
+  "dbp_pearson_r": 0.9809,
+  "sbp_variance_ratio": 0.835,
+  "dbp_variance_ratio": 0.828,
+  "template_collapse_detected": false,
+  "iso_81060_pass": true,
+  "bhs_sbp_grade": "Grade A",
+  "bhs_dbp_grade": "Grade A",
+  "ci_sbp_mae": [
+    3.25,
+    4.24
+  ],
+  "ci_dbp_mae": [
+    2.67,
+    3.62
+  ],
+  "hydro_test_pass": true,
+  "int8_xl_size_kb": 2743.39,
+  "int8_compact_size_kb": 666.83,
+  "int8_snr_db": 46.55,
+  "estimated_ram_mb": 9.6,
+  "estimated_latency_ms": 1.82,
+  "checkpoint_path": "./checkpoints/pulsefusion_tcn_xl_best.pt",
+  "tflite_xl_path": "./checkpoints/pulsefusion_tcn_xl_int8.tflite",
+  "tflite_compact_path": "./checkpoints/pulsefusion_tcn_compact_int8.tflite"
+}

@@ -1,2 +1,16 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Explicit binary files to prevent line-ending mutations
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary
+*.pptx binary
+*.onnx binary
+*.tflite binary
+*.task binary
+*.jar binary
+*.npz binary
+*.pt binary

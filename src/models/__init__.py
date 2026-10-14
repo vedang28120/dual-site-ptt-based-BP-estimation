@@ -44,8 +44,17 @@ from src.models.quantizer import (
     dequantize_asymmetric,
     calculate_quantization_error_snr,
 )
+from src.models.pulseformer_400m import PulseFormer400M
+from src.models.pulseformer_lite_50m import PulseFormerLite50M
+from src.models.compound_loss import MultiTaskDistillationLoss
+from src.models.exporter import export_student_for_snapdragon
 
 __all__ = [
+    # PulseFormer Foundation & Edge Models
+    "PulseFormer400M",
+    "PulseFormerLite50M",
+    "MultiTaskDistillationLoss",
+    "export_student_for_snapdragon",
     # DS-TCN
     "DualStreamTCN",
     "CausalConv1d",
@@ -76,3 +85,4 @@ __all__ = [
     "dequantize_asymmetric",
     "calculate_quantization_error_snr",
 ]
+

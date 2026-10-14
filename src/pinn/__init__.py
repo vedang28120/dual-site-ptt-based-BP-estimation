@@ -42,6 +42,15 @@ from .stiffness_solver import (
     solve_hrvp,
     solve_stiffness_parameters,
 )
+from .pulse_overlap_verifier import (
+    ExactPulseRegistrationEngine,
+    compute_povi,
+    compute_mda,
+    compute_upstroke_correlation,
+)
+from .anthropometrics import (
+    OrthogonalPhysiologicalExtractor,
+)
 
 __all__ = [
     # Foot detector
@@ -49,11 +58,17 @@ __all__ = [
     "detect_pulse_feet",
     "compute_subframe_ptt",
     "FootDetector",
+    # Registration & Verification
+    "ExactPulseRegistrationEngine",
+    "compute_povi",
+    "compute_mda",
+    "compute_upstroke_correlation",
     # Anthropometrics
     "compute_path_length",
     "compute_epwv",
     "compute_epwv_from_profile",
     "Anthropometrics",
+    "OrthogonalPhysiologicalExtractor",
     # Hydrostatic
     "elevation_to_hydrostatic_pressure",
     "pressure_to_elevation",

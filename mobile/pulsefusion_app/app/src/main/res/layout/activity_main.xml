@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#121212"
+    tools:context=".MainActivity">
+
+    <!-- Top Minimal Header & Controls -->
+    <LinearLayout
+        android:id="@+id/headerBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="6dp"
+        android:background="#181818"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PulseFusion BP v2.0"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSubHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dual-Site PTT &amp; DS-TCN"
+                android:textColor="#888888"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Help Guide '?' Button -->
+        <Button
+            android:id="@+id/btnHelp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:text="?"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:backgroundTint="#2E2E2E"
+            android:textColor="#38BDF8"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:padding="0dp"
+            android:layout_marginEnd="5dp" />
+
+        <!-- User Profile Demographics Button -->
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="175cm | 28y"
+            android:textSize="10sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#262626"
+            android:textColor="#38BDF8"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingHorizontal="8dp"
+            android:layout_marginEnd="5dp" />
+
+        <!-- Mode Toggle Button -->
+        <Button
+            android:id="@+id/btnModeToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="DUAL-SITE"
+            android:textSize="10sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#2A2A2A"
+            android:textColor="#E0E0E0"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingHorizontal="8dp"
+            android:layout_marginEnd="5dp" />
+
+        <!-- Model Tier Toggle Button -->
+        <Button
+            android:id="@+id/btnModelToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="TCN-XL"
+            android:textSize="10sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#007BFF"
+            android:textColor="#FFFFFF"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingHorizontal="8dp" />
+    </LinearLayout>
+
+    <!-- 1:1 SQUARE Camera Viewfinder Container (Zero Side Waste, Full Screen Width) -->
+    <FrameLayout
+        android:id="@+id/cameraContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/headerBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        android:background="#000000">
+
+        <TextureView
+            android:id="@+id/viewFinder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.example.pulsefusionbp.OverlayView
+            android:id="@+id/overlayView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Subtle Camera Flip Button -->
+        <Button
+            android:id="@+id/btnSwitchCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:text="FLIP CAM"
+            android:textSize="9sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#99222222"
+            android:textColor="#E0E0E0"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingHorizontal="8dp" />
+    </FrameLayout>
+
+    <!-- Shortened Real-Time Waveform Strip Chart (Face: Blue | Palm/Finger: Orange) -->
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/bvpChart"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintTop_toBottomOf="@+id/cameraContainer"
+        app:layout_constraintBottom_toTopOf="@+id/scanControlContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Scan Controls & Status Banner -->
+    <LinearLayout
+        android:id="@+id/scanControlContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="2dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/bvpChart"
+        app:layout_constraintBottom_toTopOf="@+id/vitalsContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvDiagnosisBadge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="IDLE — ALIGN FACE IN CENTER &amp; PALM IN SQUARE"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3.5dp"
+            android:textSize="10.5sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#222222"
+            android:layout_marginBottom="3dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginBottom="3dp"
+            android:max="210"
+            android:progress="0"
+            android:progressTint="#007BFF"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnStartScan"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:text="START DUAL-SITE SCAN (FACE + PALM)"
+                android:backgroundTint="#007BFF"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <Button
+                android:id="@+id/btnExportCsv"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginStart="6dp"
+                android:text="EXPORT CSV"
+                android:backgroundTint="#262626"
+                android:textColor="#E0E0E0"
+                android:textSize="10.5sp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <ProgressBar
+                android:id="@+id/loadingSpinner"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="6dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Comprehensive Vitals & Transparent Telemetry Dashboard -->
+    <LinearLayout
+        android:id="@+id/vitalsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingBottom="6dp"
+        android:paddingTop="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/scanControlContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Row 1: Blood Pressure + Heart Rate / HRV Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:baselineAligned="false"
+            android:layout_marginBottom="3dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                app:cardBackgroundColor="#1A1A1A"
+                app:strokeColor="#2C2C2C"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BLOOD PRESSURE (mmHg)"
+                        android:textColor="#888888"
+                        android:textSize="9.5sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- / --"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp" />
+
+                    <TextView
+                        android:id="@+id/tvMAP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAP: -- mmHg"
+                        android:textColor="#AAAAAA"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="3dp"
+                app:cardBackgroundColor="#1A1A1A"
+                app:strokeColor="#2C2C2C"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HEART RATE &amp; HRV"
+                        android:textColor="#888888"
+                        android:textSize="9.5sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvHR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- BPM"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp" />
+
+                    <TextView
+                        android:id="@+id/tvHRV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HRV: -- ms | Resp: --/m"
+                        android:textColor="#AAAAAA"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Row 2: Comprehensive Pipeline Telemetry Panel -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#1A1A1A"
+            app:strokeColor="#2C2C2C"
+            app:strokeWidth="1dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRANSPARENT PIPELINE &amp; SENSOR AUDIT"
+                    android:textColor="#888888"
+                    android:textSize="9.5sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="1dp" />
+
+                <!-- Live Camera Sensor & Recognition State -->
+                <TextView
+                    android:id="@+id/tvLiveSensors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CAM: FRONT 0.0 FPS (AE: UNLOCKED) | FACE: WAITING | PALM: WAITING"
+                    android:textColor="#38BDF8"
+                    android:fontFamily="monospace"
+                    android:textSize="9.5sp" />
+
+                <!-- Hemodynamics & Wave Velocity -->
+                <TextView
+                    android:id="@+id/tvHemodynamics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PTT: -- ms | ePWV: -- m/s | Path: 1.18 m | Head Δh: +31.5 cm"
+                    android:textColor="#E0E0E0"
+                    android:fontFamily="monospace"
+                    android:textSize="9.5sp"
+                    android:layout_marginTop="1dp" />
+
+                <!-- Signal Quality & Processing Latency -->
+                <TextView
+                    android:id="@+id/tvPipelineAudit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INPUT: Face 0f (SQI -- dB) | Palm 0f (SQI -- dB) | Proc: -- ms"
+                    android:textColor="#AAAAAA"
+                    android:fontFamily="monospace"
+                    android:textSize="9.5sp"
+                    android:layout_marginTop="1dp" />
+
+                <!-- Model Breakdown -->
+                <TextView
+                    android:id="@+id/tvModelBreakdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OUTPUTS: TCN-XL: --/-- | TCN-Compact: --/-- | HRVP: --/-- mmHg"
+                    android:textColor="#888888"
+                    android:fontFamily="monospace"
+                    android:textSize="9.5sp"
+                    android:layout_marginTop="1dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
